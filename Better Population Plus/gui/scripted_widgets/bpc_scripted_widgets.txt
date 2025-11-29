@@ -1,0 +1,1 @@
+﻿gui/bpc_settting_panel.gui = bpc_trayer

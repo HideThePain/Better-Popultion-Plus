@@ -1,0 +1,64 @@
+﻿dynasty_protection_value = {
+	value = dynasty_prestige_level
+	subtract = low_dynasty_prestige_level
+	multiply = global_var:dynasty_protection_multiplier
+	min = 0
+}
+
+### death chance ###
+# in cent
+death_chance = {
+	value = global_var:base_death_chance
+	if = {
+		limit = {
+			global_var:infant_death_chance_multiplier != 1
+			age <= define:NCharacter|TODDLER_AGE
+		}
+		multiply = global_var:infant_death_chance_multiplier
+	}
+	else_if = {
+		limit = {
+			global_var:elderly_death_chance_multiplier != 1
+			age >= elderly_age
+		}
+		multiply = global_var:elderly_death_chance_multiplier
+	}
+	if = {
+		limit = {
+			global_var:prisoner_death_chance_multiplier != 1
+			is_imprisoned = yes
+		}
+		multiply = global_var:prisoner_death_chance_multiplier
+	}
+	if = {
+		limit = {
+			global_var:player_distance_death_chance_multiplier != 1
+			exists = location
+			any_player = {
+				count = all
+				exists = location
+				trigger_if = {
+					limit = {
+						exists = capital_province
+						capital_province != location
+					}
+					"capital_province.squared_distance(root.location)" > squared_distance_massive
+				}
+				"location.squared_distance(root.location)" > squared_distance_massive
+			}
+		}
+		multiply = global_var:player_distance_death_chance_multiplier
+	}
+}
+
+elderly_age = {
+	if = {
+		limit = {
+			is_female = yes
+		}
+		value = define:NCharacter|FEMALE_ELDERLY_AGE
+	}
+	else = {
+		value = define:NCharacter|MALE_ELDERLY_AGE
+	}
+}

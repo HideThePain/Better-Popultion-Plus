@@ -1,0 +1,3 @@
+﻿death_disappear_in_history = {
+	icon = "death_natural.dds"
+}

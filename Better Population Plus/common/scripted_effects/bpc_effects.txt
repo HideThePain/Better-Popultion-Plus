@@ -1,0 +1,60 @@
+﻿bpc_init_effect = {
+	set_global_variable = { name = global_population_target value = 20000 }
+	# 0:none 1:house with limit 2:house 3:dynasty with limit 4:dynasty
+	set_global_variable = { name = player_dynasty_protection_level value = 2 }
+	set_global_variable = { name = player_dynasty_population_target value = 200 }
+	# 0:none 1:close family + spouse 2:extended family
+	set_global_variable = { name = player_family_protection_level value = 1 }
+	# 0:none 1:relation 2:close family's relation
+	set_global_variable = { name = player_relation_protection_level value = 1 }
+	# 0:none 1:courtier and guest 2:sub realm 3:realm
+	set_global_variable = { name = player_realm_protection_level value = 1 }
+	# value = tier of kept, 2 means count is protected, 0 means none.
+	set_global_variable = { name = ruler_protection_tier value = 2 }
+	set_global_variable = { name = heir_protection_count value = 3 }
+	# keep at least per (dp level-2) fertile for every dynasty.
+	set_global_variable = { name = dynasty_protection_multiplier value = 1 }
+
+	# 0:none 1:pure_blooded 2:top level (vanilla) 3:all positive
+	set_global_variable = { name = positive_genetic_protection_level value = 1 }
+	# 0:none 1:inspiration 2:done inspiration
+	set_global_variable = { name = inspiration_protection value = 1 }
+	set_global_variable = court_position_protection
+	# 0:none 1:activity 2:+travel
+	set_global_variable = { name = activity_protection value = 2 }
+	set_global_variable = historical_character_protection
+
+	set_global_variable = { name = base_death_chance value = 25 }
+	set_global_variable = { name = infant_death_chance_multiplier value = 1 }
+	set_global_variable = { name = elderly_death_chance_multiplier value = 1 }
+	set_global_variable = { name = prisoner_death_chance_multiplier value = 1 }
+	set_global_variable = { name = player_distance_death_chance_multiplier value = 2 }
+
+	# set_global_variable = adventurer_protection
+	# set_global_variable = noble_family_protection
+
+	if = {
+		limit = {
+			exists = global_var:anime_core_loaded
+		}
+		set_global_variable = waifu_protection
+	}
+	if = {
+		limit = {
+			exists = global_var:AGOT_is_loaded
+		}
+		set_global_variable = AGOT_dragon_protection
+	}
+	if = {
+		limit = {
+			exists = global_var:orient_empires_loaded
+		}
+		set_global_variable = { name = global_population_target value = 35000 }
+	}
+	if = {
+		limit = {
+			godherja_loaded = yes
+		}
+		set_global_variable = GH_magic_protection
+	}
+}

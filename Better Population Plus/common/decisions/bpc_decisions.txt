@@ -1,0 +1,182 @@
+﻿bpc_decision = {
+	picture = { reference = "gfx/interface/illustrations/decisions/decision_death_god.dds" }
+
+	widget = {
+		gui = "decision_view_widget_option_list_big_option_icon"
+		controller = decision_option_list_controller
+		decision_to_second_step_button = "SELECT_ACTION"
+
+		show_from_start = yes
+		item = {
+			value = enable_population_control
+			current_description = enable_population_control_desc
+			localization = enable_population_control
+			icon = "gfx/interface/icons/widgets/enable_population_control.dds"
+			is_shown = {
+				NOT = {
+					exists = global_var:enable_population_control
+				}
+			}
+			ai_chance = {
+				value = 1
+			}
+		}
+		item = {
+			value = disable_population_control
+			current_description = disable_population_control_desc
+			localization = disable_population_control
+			icon = "gfx/interface/icons/widgets/disable_population_control.dds"
+			is_shown = {
+				exists = global_var:enable_population_control
+			}
+			ai_chance = {
+				value = 1
+			}
+		}
+		item = {
+			value = open_bpc_setting_panel
+			current_description = open_bpc_setting_panel_desc
+			localization = open_bpc_setting_panel
+			icon = "gfx/interface/icons/widgets/open_bpc_setting_panel.dds"
+			ai_chance = {
+				value = 1
+			}
+		}
+
+		item = {
+			value = destory_adventurer_titles
+			current_description = destory_adventurer_titles_desc
+			localization = destory_adventurer_titles
+			icon = "gfx/interface/icons/widgets/destory_adventurer_titles.dds"
+			ai_chance = {
+				value = 1
+			}
+		}
+		item = {
+			value = destory_noble_family_titles
+			current_description = destory_noble_family_titles_desc
+			localization = destory_noble_family_titles
+			icon = "gfx/interface/icons/widgets/destory_noble_family_titles.dds"
+			ai_chance = {
+				value = 1
+			}
+		}
+		item = {
+			value = destory_nomad_titles
+			current_description = destory_nomad_titles_desc
+			localization = destory_nomad_titles
+			icon = "gfx/interface/icons/widgets/destory_nomad_titles.dds"
+			ai_chance = {
+				value = 1
+			}
+		}
+	}
+	decision_group_type = decisions
+	is_shown = {
+		is_ai = no
+	}
+
+	effect = {
+		if = {
+			limit = { NOT = { exists = global_var:global_population_target } }
+			bpc_init_effect = yes
+		}
+
+		if = {
+			limit = { scope:enable_population_control = yes }
+			custom_tooltip = enable_population_control_tooltip
+			set_global_variable = enable_population_control
+			if = {
+				limit = {
+					years_from_game_start < 1
+				}
+				trigger_event = { on_action = bpc_yearly_global_pulse_at_once }
+			}
+			else = {
+				trigger_event = { on_action = bpc_yearly_global_pulse }
+			}
+		}
+		if = {
+			limit = { scope:disable_population_control = yes }
+			custom_tooltip = disable_population_control_tooltip
+			remove_global_variable = enable_population_control	
+		}
+		if = {
+			limit = { scope:open_bpc_setting_panel = yes }
+			custom_tooltip = open_bpc_setting_panel_tooltip
+			set_global_variable = open_bpc_setting_panel	
+		}
+		if = {
+			limit = { scope:destory_adventurer_titles = yes }
+			every_ruler = {
+				limit = {
+					is_ai = yes
+					is_landless_adventurer = yes
+					is_at_war = no
+					highest_held_title_tier <= tier_duchy
+					trigger_if = {
+						limit = {
+							exists = global_var:historical_character_protection
+						}
+						historical_character_trigger = no
+					}
+				}
+				destroy_title = primary_title
+			}
+		}
+		else_if = {
+			limit = { scope:destory_noble_family_titles = yes }
+			every_ruler = {
+				limit = {
+					is_ai = yes
+					is_landed = no
+					is_at_war = no
+					primary_title = {
+						is_noble_family_title = yes
+					}
+					NOT = {
+						any_held_title = {
+							is_noble_family_title = no
+						}
+					}
+					trigger_if = {
+						limit = {
+							exists = global_var:historical_character_protection
+						}
+						historical_character_trigger = no
+					}
+				}
+				destroy_title = primary_title
+			}
+		}
+		else_if = {
+			limit = { scope:destory_nomad_titles = yes }
+			every_ruler = {
+				limit = {
+					is_ai = yes
+					is_landed = no
+					is_at_war = no
+					primary_title = {
+						is_nomad_title = yes
+					}
+					NOT = {
+						any_held_title = {
+							is_nomad_title = no
+						}
+					}
+					trigger_if = {
+						limit = {
+							exists = global_var:historical_character_protection
+						}
+						historical_character_trigger = no
+					}
+				}
+				destroy_title = primary_title
+			}
+		}
+	}
+	ai_check_interval = 0
+	ai_will_do = {
+		base = 0
+	}
+}

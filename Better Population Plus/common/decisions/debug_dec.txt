@@ -1,0 +1,34 @@
+﻿supercomp_debug_decision = {
+	desc = "supercomp_debug_decision_desc"
+	selection_tooltip = "supercomp_debug_decision_tooltip"
+    confirm = "supercomp_debug_decision_confirm"
+	
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_major_religion.dds"
+	}
+
+	decision_group_type = debug
+
+	is_shown = {
+		is_ai = no
+        debug_only = yes
+	}
+
+	ai_goal = no
+	ai_will_do = {
+		value = 0
+	}
+	ai_potential = {
+		always = no
+	}
+	ai_check_interval = 0
+
+	effect = {
+        if = {
+            limit = {
+              use_elf_destiny_safe = 1
+            }
+            debug_log = "ELF DESTINY CHECK IS WORKING!!!"
+        }
+	}
+}

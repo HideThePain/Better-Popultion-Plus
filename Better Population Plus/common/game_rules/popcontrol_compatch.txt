@@ -1,0 +1,395 @@
+witchcraft_load = {
+	default = not_using_witchcraft
+	categories = {
+		tweaks
+	}
+	using_witchcraft_yes = {
+	}
+	not_using_witchcraft = {
+	}
+}
+
+pure_blooded_expanded_load = {
+	default = not_using_pure_blooded_expanded
+	categories = {
+		tweaks
+	}
+	using_pure_blooded_expanded_yes = {
+	}
+	not_using_pure_blooded_expanded = {
+	}
+}
+
+pantheon_of_the_gods_load = {
+	default = not_using_pantheon_of_the_gods
+	categories = {
+		tweaks
+	}
+	using_pantheon_of_the_gods_yes = {
+	}
+	not_using_pantheon_of_the_gods = {
+	}
+}
+
+highlander_expanded_load = {
+	default = not_using_highlander_expanded
+	categories = {
+		tweaks
+	}
+	using_highlander_expanded_yes = {
+	}
+	not_using_highlander_expanded = {
+	}
+}
+
+highlander_normal_load = {
+	default = not_using_highlander_normal
+	categories = {
+		tweaks
+	}
+	using_highlander_normal_yes = {
+	}
+	not_using_highlander_normal = {
+	}
+}
+
+immortals_revised_mod_load = {
+	default = not_using_immortals_revised_mod
+	categories = {
+		tweaks
+	}
+	using_immortals_revised_mod_yes = {
+	}
+	not_using_immortals_revised_mod = {
+	}
+}
+
+immortals_improved_mod_load = {
+	default = not_using_immortals_improved_mod
+	categories = {
+		tweaks
+	}
+	using_immortals_improved_mod_yes = {
+	}
+	not_using_immortals_improved_mod = {
+	}
+}
+
+elf_destiny_load = {
+	default = not_using_elf_destiny
+	categories = {
+		tweaks
+	}
+	using_elf_destiny_yes = {
+	}
+	not_using_elf_destiny = {
+	}
+}
+
+elf_superiority_submod_load = {
+	default = not_using_elf_superiority_submod
+	categories = {
+		tweaks
+	}
+	using_elf_superiority_submod_yes = {
+	}
+	not_using_elf_superiority_submod = {
+	}
+}
+
+elf_lotr_submod_load = {
+	default = not_using_elf_lotr_submod
+	categories = {
+		tweaks
+	}
+	using_elf_lotr_submod_yes = {
+	}
+	not_using_elf_lotr_submod = {
+	}
+}
+
+elf_atlantis_submod_load = {
+	default = not_using_elf_atlantis_submod
+	categories = {
+		tweaks
+	}
+	using_elf_atlantis_submod_yes = {
+	}
+	not_using_elf_atlantis_submod = {
+	}
+}
+
+the_road_of_god_load = {
+	default = not_using_the_road_of_god
+	categories = {
+		tweaks
+	}
+	using_the_road_of_god_yes = {
+	}
+	not_using_the_road_of_god = {
+	}
+}
+
+the_beast_load = {
+	default = not_using_the_beast
+	categories = {
+		tweaks
+	}
+	using_the_beast_yes = {
+	}
+	not_using_the_beast = {
+	}
+}
+
+age_of_dragons_reborn_load = {
+	default = not_using_age_of_dragons_reborn
+	categories = {
+		tweaks
+	}
+	using_age_of_dragons_reborn_yes = {
+	}
+	not_using_age_of_dragons_reborn = {
+	}
+}
+
+agot_load = {
+	default = not_using_agot
+	categories = {
+		tweaks
+	}
+	using_agot_yes = {
+	}
+	not_using_agot = {
+	}
+}
+
+#pod_load = {
+#	default = not_using_pod
+#	categories = {
+#		tweaks
+#	}
+#	using_pod_yes = {
+#	}
+#	not_using_pod = {
+#	}
+#}
+
+#godherja_load = {
+#	default = not_using_godherja
+#	categories = {
+#		tweaks
+#	}
+#	using_godherja_yes = {
+#	}
+#	not_using_godherja = {
+#	}
+#}
+
+apotheosis_load = {
+	default = not_using_apotheosis
+	categories = {
+		tweaks
+	}
+	using_apotheosis_yes = {
+	}
+	not_using_apotheosis = {
+	}
+}
+
+arcane_legacy_3_load = {
+	default = not_using_arcane_legacy_3
+	categories = {
+		tweaks
+	}
+	using_arcane_legacy_3_yes = {
+	}
+	not_using_arcane_legacy_3 = {
+	}
+}
+
+arcane_legacy_2_load = {
+	default = not_using_arcane_legacy_2
+	categories = {
+		tweaks
+	}
+	using_arcane_legacy_2_yes = {
+	}
+	not_using_arcane_legacy_2 = {
+	}
+}
+
+more_congenital_traits_load = {
+	default = not_using_more_congenital_traits
+	categories = {
+		tweaks
+	}
+	using_more_congenital_traits_yes = {
+	}
+	not_using_more_congenital_traits = {
+	}
+}
+
+ary_new_commander_load = {
+	default = not_using_ary_new_commander
+	categories = {
+		tweaks
+	}
+	using_ary_new_commander_yes = {
+	}
+	not_using_ary_new_commander = {
+	}
+}
+
+inheritable_traits_plus_load = {
+	default = not_using_inheritable_traits_plus
+	categories = {
+		tweaks
+	}
+	using_inheritable_traits_plus_yes = {
+	}
+	not_using_inheritable_traits_plus = {
+	}
+}
+
+lifespan_traits_load = {
+	default = not_using_lifespan_traits
+	categories = {
+		tweaks
+	}
+	using_lifespan_traits_yes = {
+	}
+	not_using_lifespan_traits = {
+	}
+}
+
+vampirism_lycanthropy_load = {
+	default = not_using_vampirism_lycanthropy
+	categories = {
+		tweaks
+	}
+	using_vampirism_lycanthropy_yes = {
+	}
+	not_using_vampirism_lycanthropy = {
+	}
+}
+
+supernatural_load = {
+	default = not_using_supernatural
+	categories = {
+		tweaks
+	}
+	using_supernatural_yes = {
+	}
+	not_using_supernatural = {
+	}
+}
+
+petty_inheritable_load = {
+	default = not_using_petty_inheritable
+	categories = {
+		tweaks
+	}
+	using_petty_inheritable_yes = {
+	}
+	not_using_petty_inheritable = {
+	}
+}
+
+positive_congenital_load = {
+	default = save_positive_congenital_yes
+	categories = {
+		tweaks
+	}
+	save_positive_congenital_yes = {
+	}
+	not_save_positive_congenital = {
+	}
+}
+
+negative_congenital_load = {
+	default = save_negative_congenital_yes
+	categories = {
+		tweaks
+	}
+	save_negative_congenital_yes = {
+	}
+	not_save_negative_congenital = {
+	}
+}
+
+special_congenital_load = {
+	default = save_special_congenital_yes
+	categories = {
+		tweaks
+	}
+	save_special_congenital_yes = {
+	}
+	not_save_special_congenital = {
+	}
+}
+
+sapphos_daughter_2_load = {
+	default = not_using_sapphos_daughter_2
+	categories = {
+		tweaks
+	}
+	using_sapphos_daughter_2_yes = {
+	}
+	not_using_sapphos_daughter_2 = {
+	}
+}
+
+old_valyria_lite_load = {
+	default = not_using_old_valyria_lite
+	categories = {
+		tweaks
+	}
+	using_old_valyria_lite_yes = {
+	}
+	not_using_old_valyria_lite = {
+	}
+}
+
+education_5_load = {
+	default = save_education_5_yes
+	categories = {
+		tweaks
+	}
+	save_education_5_yes = {
+	}
+	not_save_education_5 = {
+	}
+}
+
+dense_muscles_load = {
+	default = not_using_dense_muscles
+	categories = {
+		tweaks
+	}
+	using_dense_muscles_yes = {
+	}
+	not_using_dense_muscles = {
+	}
+}
+
+become_hero_load = {
+	default = not_using_become_hero
+	categories = {
+		tweaks
+	}
+	using_become_hero_yes = {
+	}
+	not_using_become_hero = {
+	}
+}
+
+rice_load = {
+	default = not_using_rice
+	categories = {
+		tweaks
+	}
+	using_rice_yes = {
+	}
+	not_using_rice = {
+	}
+}

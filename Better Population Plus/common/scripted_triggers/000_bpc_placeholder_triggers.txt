@@ -1,0 +1,9 @@
+﻿# anime core lib
+waifu_portrait_trigger = { always = no }
+# hunjian
+hunjian_fake_immortal = { always = no }
+# hmi
+hm_historical_character_trigger = { always = no }
+# gh
+godherja_loaded = { always = no }
+gh_know_magic_or_spell = { always = no }

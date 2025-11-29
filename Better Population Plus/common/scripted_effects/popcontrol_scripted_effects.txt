@@ -1,0 +1,444 @@
+﻿check_all_mod_global_vars = {
+	if = { # IF can only accept one effect inside moron
+		limit = {
+			has_game_rule = using_elf_destiny_yes
+		}
+		set_global_variable = {
+			name = elf_destiny_protection
+			value = 1
+		}
+		set_global_variable = {
+			name = elf_destiny_is_loaded
+			value = 1
+		}
+	}
+	if = {
+		limit = {
+			has_game_rule = using_witchcraft_yes
+		}
+		set_global_variable = {
+			name = witchcraft_protection
+			value = 1
+		}
+		set_global_variable = {
+			name = witchcraft_is_loaded
+			value = 1
+		}
+	}
+	if = {
+		limit = {
+			has_game_rule = using_pure_blooded_expanded_yes
+		}
+		set_global_variable = {
+			name = pure_blooded_expanded_protection
+			value = 1
+		}
+		set_global_variable = {
+			name = pure_blooded_expanded_is_loaded
+			value = 1
+		}
+	}
+	if = {
+		limit = {
+			has_game_rule = using_pantheon_of_the_gods_yes
+		}
+		set_global_variable = {
+			name = pantheon_of_the_gods_protection
+			value = 1
+		}
+		set_global_variable = {
+			name = pantheon_of_the_gods_is_loaded
+			value = 1
+		}
+	}
+	if = {
+		limit = {
+			has_game_rule = using_highlander_expanded_yes
+		}
+		set_global_variable = {
+			name = highlander_expanded_protection
+			value = 1
+		}
+		set_global_variable = {
+			name = highlander_expanded_is_loaded
+			value = 1
+		}
+	}
+	if = {
+		limit = {
+			has_game_rule = using_highlander_normal_yes
+		}
+		set_global_variable = {
+			name = highlander_normal_protection
+			value = 1
+		}
+		set_global_variable = {
+			name = highlander_normal_is_loaded
+			value = 1
+		}
+	}
+	if = {
+		limit = {
+			has_game_rule = using_immortals_revised_mod_yes
+		}
+		set_global_variable = {
+			name = immortals_revised_mod_protection
+			value = 1
+		}
+		set_global_variable = {
+			name = immortals_revised_mod_is_loaded
+			value = 1
+		}
+	}
+	if = {
+		limit = {
+			has_game_rule = using_immortals_improved_mod_yes
+		}
+		set_global_variable = {
+			name = immortals_improved_mod_protection
+			value = 1
+		}
+		set_global_variable = {
+			name = immortals_improved_mod_is_loaded
+			value = 1
+		}
+	}
+	if = {
+		limit = {
+			has_game_rule = using_the_beast_yes
+		}
+		set_global_variable = {
+			name = the_beast_protection
+			value = 1
+		}
+		set_global_variable = {
+			name = the_beast_is_loaded
+			value = 1
+		}
+	}
+	if = {
+		limit = {
+			has_game_rule = using_age_of_dragons_reborn_yes
+		}
+		set_global_variable = {
+			name = age_of_dragons_reborn_protection
+			value = 1
+		}
+		set_global_variable = {
+			name = age_of_dragons_reborn_is_loaded
+			value = 1
+		}
+	}
+	if = {
+		limit = {
+			has_game_rule = using_agot_yes
+		}
+		set_global_variable = {
+			name = agot_protection
+			value = 1
+		}
+		set_global_variable = {
+			name = agot_is_loaded
+			value = 1
+		}
+	}
+	if = {
+		limit = {
+			has_game_rule = using_apotheosis_yes
+		}
+		set_global_variable = {
+			name = apotheosis_protection
+			value = 1
+		}
+		set_global_variable = {
+			name = apotheosis_is_loaded
+			value = 1
+		}
+	}
+	if = {
+		limit = {
+			has_game_rule = using_arcane_legacy_3_yes
+		}
+		set_global_variable = {
+			name = arcane_legacy_3_protection
+			value = 1
+		}
+		set_global_variable = {
+			name = arcane_legacy_3_is_loaded
+			value = 1
+		}
+	}
+	if = {
+		limit = {
+			has_game_rule = using_arcane_legacy_2_yes
+		}
+		set_global_variable = {
+			name = arcane_legacy_2_protection
+			value = 1
+		}
+		set_global_variable = {
+			name = arcane_legacy_2_is_loaded
+			value = 1
+		}
+	}
+	if = {
+		limit = {
+			has_game_rule = using_more_congenital_traits_yes
+		}
+		set_global_variable = {
+			name = more_congenital_traits_protection
+			value = 1
+		}
+		set_global_variable = {
+			name = more_congenital_traits_is_loaded
+			value = 1
+		}
+	}
+	if = {
+		limit = {
+			has_game_rule = using_ary_new_commander_yes
+		}
+		set_global_variable = {
+			name = ary_new_commander_protection
+			value = 1
+		}
+		set_global_variable = {
+			name = ary_new_commander_is_loaded
+			value = 1
+		}
+	}
+	if = {
+		limit = {
+			has_game_rule = using_inheritable_traits_plus_yes
+		}
+		set_global_variable = {
+			name = inheritable_traits_plus_protection
+			value = 1
+		}
+		set_global_variable = {
+			name = inheritable_traits_plus_is_loaded
+			value = 1
+		}
+	}
+	if = {
+		limit = {
+			has_game_rule = using_lifespan_traits_yes
+		}
+		set_global_variable = {
+			name = lifespan_traits_protection
+			value = 1
+		}
+		set_global_variable = {
+			name = lifespan_traits_is_loaded
+			value = 1
+		}
+	}
+	if = {
+		limit = {
+			has_game_rule = using_vampirism_lycanthropy_yes
+		}
+		set_global_variable = {
+			name = vampirism_lycanthropy_protection
+			value = 1
+		}
+		set_global_variable = {
+			name = vampirism_lycanthropy_is_loaded
+			value = 1
+		}
+	}
+	if = {
+		limit = {
+			has_game_rule = using_supernatural_yes
+		}
+		set_global_variable = {
+			name = supernatural_protection
+			value = 1
+		}
+		set_global_variable = {
+			name = supernatural_is_loaded
+			value = 1
+		}
+	}
+	if = {
+		limit = {
+			has_game_rule = using_petty_inheritable_yes
+		}
+		set_global_variable = {
+			name = petty_inheritable_protection
+			value = 1
+		}
+		set_global_variable = {
+			name = petty_inheritable_is_loaded
+			value = 1
+		}
+	}
+	if = {
+		limit = {
+			has_game_rule = save_positive_congenital_yes
+		}
+		set_global_variable = {
+			name = positive_congenital_protection
+			value = 1
+		}
+		set_global_variable = {
+			name = positive_congenital_is_loaded
+			value = 1
+		}
+	}
+	if = {
+		limit = {
+			has_game_rule = save_negative_congenital_yes
+		}
+		set_global_variable = {
+			name = negative_congenital_protection
+			value = 1
+		}
+		set_global_variable = {
+			name = negative_congenital_is_loaded
+			value = 1
+		}
+	}
+	if = {
+		limit = {
+			has_game_rule = save_special_congenital_yes
+		}
+		set_global_variable = {
+			name = special_congenital_protection
+			value = 1
+		}
+		set_global_variable = {
+			name = special_congenital_is_loaded
+			value = 1
+		}
+	}
+	if = {
+		limit = {
+			has_game_rule = using_sapphos_daughter_2_yes
+		}
+		set_global_variable = {
+			name = sapphos_daughter_2_protection
+			value = 1
+		}
+		set_global_variable = {
+			name = sapphos_daughter_2_is_loaded
+			value = 1
+		}
+	}
+	if = {
+		limit = {
+			has_game_rule = using_old_valyria_lite_yes
+		}
+		set_global_variable = {
+			name = old_valyria_lite_protection
+			value = 1
+		}
+		set_global_variable = {
+			name = old_valyria_lite_is_loaded
+			value = 1
+		}
+	}
+	if = {
+		limit = {
+			has_game_rule = save_education_5_yes
+		}
+		set_global_variable = {
+			name = education_5_protection
+			value = 1
+		}
+		set_global_variable = {
+			name = education_5_is_loaded
+			value = 1
+		}
+	}
+	if = {
+		limit = {
+			has_game_rule = using_dense_muscles_yes
+		}
+		set_global_variable = {
+			name = dense_muscles_protection
+			value = 1
+		}
+		set_global_variable = {
+			name = dense_muscles_is_loaded
+			value = 1
+		}
+	}
+	if = {
+		limit = {
+			has_game_rule = using_become_hero_yes
+		}
+		set_global_variable = {
+			name = become_hero_protection
+			value = 1
+		}
+		set_global_variable = {
+			name = become_hero_is_loaded
+			value = 1
+		}
+	}
+	if = {
+		limit = {
+			has_game_rule = using_rice_yes
+		}
+		set_global_variable = {
+			name = rice_protection
+			value = 1
+		}
+		set_global_variable = {
+			name = rice_is_loaded
+			value = 1
+		}
+	}
+	if = {
+		limit = {
+			has_game_rule = using_elf_lotr_submod_yes
+		}
+		set_global_variable = {
+			name = elf_lotr_submod_protection
+			value = 1
+		}
+		set_global_variable = {
+			name = elf_lotr_submod_is_loaded
+			value = 1
+		}
+	}
+	if = {
+		limit = {
+			has_game_rule = using_elf_atlantis_submod_yes
+		}
+		set_global_variable = {
+			name = elf_atlantis_submod_protection
+			value = 1
+		}
+		set_global_variable = {
+			name = elf_atlantis_submod_is_loaded
+			value = 1
+		}
+	}
+	if = {
+		limit = {
+			has_game_rule = using_elf_superiority_submod_yes
+		}
+		set_global_variable = {
+			name = elf_superiority_submod_protection
+			value = 1
+		}
+		set_global_variable = {
+			name = elf_superiority_submod_is_loaded
+			value = 1
+		}
+	}
+	if = {
+		limit = {
+			has_game_rule = using_the_road_of_god_yes
+		}
+		set_global_variable = {
+			name = the_road_of_god_protection
+			value = 1
+		}
+		set_global_variable = {
+			name = the_road_of_god_is_loaded
+			value = 1
+		}
+	}
+}

@@ -1,0 +1,1012 @@
+widget = {
+    name = "bpc_trayer"
+    size = { 100% 100% }
+    layer = middle
+    visible = "[Not(IsObserver)]"
+    bpc_settting_panel = {}
+}
+
+types hm_windows{
+    type bpc_settting_panel = widget {
+        name = "bpc_settting_panel"
+        parentanchor = center
+        size = { 800 1000 }
+        layer = middle
+        filter_mouse = all
+        alwaystransparent = no
+
+        datacontext = "[GetVariableSystem]"
+        datacontext = "[GetPlayer]"
+        datacontext = "[GetScriptedGui( 'open_bpc_setting_panel' )]"
+        visible = "[ScriptedGui.IsShown( GuiScope.End )]"
+
+        using = Window_Background
+        using = Window_Decoration
+
+        icon = {
+            size = { 100% 100% }
+            texture = "gfx/interface/illustrations/decisions/death_god.dds"
+        }
+        state = {
+            name = _show
+            using = Animation_FadeIn_Quick
+            using = Sound_WindowShow_Standard
+            position_x = 0
+            on_start = "[GetVariableSystem.Set( 'hide_bottom_left_HUD', 'true' )]"
+        }
+        state = {
+            name = _hide
+            using = Animation_FadeOut_Quick
+            using = Sound_WindowHide_Standard
+            position_x = -60
+            on_start = "[GetVariableSystem.Clear( 'hide_bottom_left_HUD' )]"
+        }
+        icon = {
+            size = { 100% 100% }
+            text_single = {
+                text = "bpc_setting_panel_header"
+                parentanchor = top|hcenter
+                position = { 0 5 }
+                default_format = "#high"
+                fontsize = 28
+            }
+        }
+
+        flowcontainer = {
+            ignoreinvisible = yes
+
+            parentanchor = top|right
+            position = { -20 10 }
+
+            button_close = {
+                onclick = "[ScriptedGui.Execute( GuiScope.End ) ]"
+
+                size = { 40 40 }
+                shortcut = "close_window"
+                tooltip = "CLOSE_TOOLTIP"
+                clicksound = "event:/SFX/UI/Generic/sfx_ui_generic_close"
+                using = Animation_ShowHide_Standard
+
+                block "button_frames"
+                {
+                    gfxtype = togglepushbuttongfx
+                    effectname = "NoHighlight"
+                    upframe = 1
+                    uphoverframe = 2
+                    uppressedframe = 3
+                    downframe = 2
+                    downhoverframe = 2
+                    downpressedframe = 3
+                    disableframe = 4
+                }
+            }
+        }
+        vbox = {
+            layoutpolicy_horizontal = expanding
+            margin_top = 50
+
+            scrollbox = {
+                size = { 100% 100% }
+                layoutpolicy_horizontal = expanding
+                layoutpolicy_vertical = expanding
+                scrollbarpolicy_vertical = as_needed
+                scrollbarpolicy_horizontal = as_needed
+                scrollbar_horizontal = {
+                    using = Scrollbar_Horizontal
+                }
+                scrollbar_vertical = {
+                    using = Scrollbar_Vertical
+                }
+                background = {
+                    using = Background_Area
+                    color = { 0 0 0 0.3 }
+                }
+                blockoverride "scrollbox_background" {}
+                blockoverride "scrollbox_background_fade" {}
+                blockoverride "scrollbox_margins" {}
+                blockoverride "scrollbox_content" {
+                    hbox = {
+                        margin = { 0 10 }
+                        button_expand = {
+                            size = { 40 40 }
+                            datacontext = "[GetScriptedGui( 'global_population_target_subtract' )]"
+                            onclick = "[ScriptedGui.Execute( GuiScope.End )]"
+                            mirror = horizontal
+                        }
+                        text_label_center = {
+                            text = "global_population_target_header"
+                            tooltip = "global_population_target_desc"
+                            default_format = "#high"
+                            fontsize = 20
+                        }
+                        button_expand = {
+                            size = { 40 40 }
+                            datacontext = "[GetScriptedGui( 'global_population_target_add' )]"
+                            onclick = "[ScriptedGui.Execute( GuiScope.End )]"
+                        }
+                    }
+                    vbox = {
+                        margin = { 0 10 }
+                        text_label_center = {
+                            text = "ruler_protection_tier_name"
+                            tooltip = "ruler_protection_tier_desc"
+                            default_format = "#high"
+                            fontsize = 20
+                        }
+                        hbox = {
+                            spacing = 20
+
+                            bpc_option_box = {
+                                datacontext = "[GetScriptedGui('ruler_protection_tier_0')]"
+                                blockoverride "text" {
+                                    using = text_label_center_background
+                                    text = "NONE"
+                                }
+                            }
+                            bpc_option_box = {
+                                datacontext = "[GetScriptedGui('ruler_protection_tier_1')]"
+                                blockoverride "text" {
+                                    using = text_label_center_background
+                                    text = "game_concept_baron"
+                                }
+                            }
+                            bpc_option_box = {
+                                datacontext = "[GetScriptedGui('ruler_protection_tier_2')]"
+                                blockoverride "text" {
+                                    using = text_label_center_background
+                                    text = "game_concept_count"
+                                }
+                            }
+                            bpc_option_box = {
+                                datacontext = "[GetScriptedGui('ruler_protection_tier_3')]"
+                                blockoverride "text" {
+                                    using = text_label_center_background
+                                    text = "game_concept_duke"
+                                }
+                            }
+                            bpc_option_box = {
+                                datacontext = "[GetScriptedGui('ruler_protection_tier_4')]"
+                                blockoverride "text" {
+                                    using = text_label_center_background
+                                    text = "game_concept_king"
+                                }
+                            }
+                            bpc_option_box = {
+                                datacontext = "[GetScriptedGui('ruler_protection_tier_5')]"
+                                blockoverride "text" {
+                                    using = text_label_center_background
+                                    text = "game_concept_emperor"
+                                }
+                            }
+                        }
+                    }
+                    hbox = {
+                        margin = { 0 10 }
+                        button_expand = {
+                            size = { 40 40 }
+                            datacontext = "[GetScriptedGui( 'heir_protection_count_subtract' )]"
+                            onclick = "[ScriptedGui.Execute( GuiScope.End )]"
+                            mirror = horizontal
+                        }
+                        text_label_center = {
+                            text = "heir_protection_count_header"
+                            tooltip = "heir_protection_count_desc"
+                            default_format = "#high"
+                            fontsize = 20
+                        }
+                        button_expand = {
+                            size = { 40 40 }
+                            datacontext = "[GetScriptedGui( 'heir_protection_count_add' )]"
+                            onclick = "[ScriptedGui.Execute( GuiScope.End )]"
+                        }
+                    }
+                    hbox = {
+                        margin = { 0 10 }
+                        button_expand = {
+                            size = { 40 40 }
+                            datacontext = "[GetScriptedGui( 'dynasty_protection_multiplier_subtract' )]"
+                            onclick = "[ScriptedGui.Execute( GuiScope.End )]"
+                            mirror = horizontal
+                        }
+                        text_label_center = {
+                            text = "dynasty_protection_multiplier_header"
+                            tooltip = "dynasty_protection_multiplier_desc"
+                            default_format = "#high"
+                            fontsize = 20
+                        }
+                        button_expand = {
+                            size = { 40 40 }
+                            datacontext = "[GetScriptedGui( 'dynasty_protection_multiplier_add' )]"
+                            onclick = "[ScriptedGui.Execute( GuiScope.End )]"
+                        }
+                    }
+                    vbox = {
+                        margin = { 0 10 }
+                        text_label_center = {
+                            text = "player_dynasty_protection_level_name"
+                            tooltip = "player_dynasty_protection_level_desc"
+                            default_format = "#high"
+                            fontsize = 20
+                        }
+                        hbox = {
+                            spacing = 20
+
+                            bpc_option_box = {
+                                datacontext = "[GetScriptedGui('player_dynasty_protection_level_0')]"
+                                blockoverride "text" {
+                                    using = text_label_center_background
+                                    text = "player_dynasty_protection_level_0_name"
+                                }
+                            }
+                            bpc_option_box = {
+                                datacontext = "[GetScriptedGui('player_dynasty_protection_level_1')]"
+                                blockoverride "text" {
+                                    using = text_label_center_background
+                                    text = "player_dynasty_protection_level_1_name"
+                                }
+                            }
+                            bpc_option_box = {
+                                datacontext = "[GetScriptedGui('player_dynasty_protection_level_2')]"
+                                blockoverride "text" {
+                                    using = text_label_center_background
+                                    text = "player_dynasty_protection_level_2_name"
+                                }
+                            }
+                            bpc_option_box = {
+                                datacontext = "[GetScriptedGui('player_dynasty_protection_level_3')]"
+                                blockoverride "text" {
+                                    using = text_label_center_background
+                                    text = "player_dynasty_protection_level_3_name"
+                                }
+                            }
+                            bpc_option_box = {
+                                datacontext = "[GetScriptedGui('player_dynasty_protection_level_4')]"
+                                blockoverride "text" {
+                                    using = text_label_center_background
+                                    text = "player_dynasty_protection_level_4_name"
+                                }
+                            }
+                        }
+                    }
+                    hbox = {
+                        margin = { 0 10 }
+                        visible = "[GetScriptedGui( 'player_dynasty_protection_level_use_target' ).IsShown( GuiScope.End )]"
+                        button_expand = {
+                            size = { 40 40 }
+                            datacontext = "[GetScriptedGui( 'player_dynasty_population_target_subtract' )]"
+                            onclick = "[ScriptedGui.Execute( GuiScope.End )]"
+                            mirror = horizontal
+                        }
+                        text_label_center = {
+                            text = "player_dynasty_population_target_header"
+                            tooltip = "player_dynasty_population_target_desc"
+                            default_format = "#high"
+                            fontsize = 20
+                        }
+                        button_expand = {
+                            size = { 40 40 }
+                            datacontext = "[GetScriptedGui( 'player_dynasty_population_target_add' )]"
+                            onclick = "[ScriptedGui.Execute( GuiScope.End )]"
+                        }
+                    }
+                    vbox = {
+                        margin = { 0 10 }
+                        text_label_center = {
+                            text = "player_family_protection_level_name"
+                            tooltip = "player_family_protection_level_desc"
+                            default_format = "#high"
+                            fontsize = 20
+                        }
+                        hbox = {
+                            spacing = 20
+
+                            bpc_option_box = {
+                                datacontext = "[GetScriptedGui('player_family_protection_level_0')]"
+                                blockoverride "text" {
+                                    using = text_label_center_background
+                                    text = "player_family_protection_level_0_name"
+                                }
+                            }
+                            bpc_option_box = {
+                                datacontext = "[GetScriptedGui('player_family_protection_level_1')]"
+                                blockoverride "text" {
+                                    using = text_label_center_background
+                                    text = "player_family_protection_level_1_name"
+                                }
+                            }
+                            bpc_option_box = {
+                                datacontext = "[GetScriptedGui('player_family_protection_level_2')]"
+                                blockoverride "text" {
+                                    using = text_label_center_background
+                                    text = "player_family_protection_level_2_name"
+                                }
+                            }
+                        }
+                    }
+                    vbox = {
+                        margin = { 0 10 }
+                        text_label_center = {
+                            text = "player_relation_protection_level_name"
+                            tooltip = "player_relation_protection_level_desc"
+                            default_format = "#high"
+                            fontsize = 20
+                        }
+                        hbox = {
+                            spacing = 20
+
+                            bpc_option_box = {
+                                datacontext = "[GetScriptedGui('player_relation_protection_level_0')]"
+                                blockoverride "text" {
+                                    using = text_label_center_background
+                                    text = "player_relation_protection_level_0_name"
+                                }
+                            }
+                            bpc_option_box = {
+                                datacontext = "[GetScriptedGui('player_relation_protection_level_1')]"
+                                blockoverride "text" {
+                                    using = text_label_center_background
+                                    text = "player_relation_protection_level_1_name"
+                                }
+                            }
+                            bpc_option_box = {
+                                datacontext = "[GetScriptedGui('player_relation_protection_level_2')]"
+                                blockoverride "text" {
+                                    using = text_label_center_background
+                                    text = "player_relation_protection_level_2_name"
+                                }
+                            }
+                        }
+                    }
+                    vbox = {
+                        margin = { 0 10 }
+                        text_label_center = {
+                            text = "player_realm_protection_level_name"
+                            tooltip = "player_realm_protection_level_desc"
+                            default_format = "#high"
+                            fontsize = 20
+                        }
+                        hbox = {
+                            spacing = 20
+
+                            bpc_option_box = {
+                                datacontext = "[GetScriptedGui('player_realm_protection_level_0')]"
+                                blockoverride "text" {
+                                    using = text_label_center_background
+                                    text = "player_realm_protection_level_0_name"
+                                }
+                            }
+                            bpc_option_box = {
+                                datacontext = "[GetScriptedGui('player_realm_protection_level_1')]"
+                                blockoverride "text" {
+                                    using = text_label_center_background
+                                    text = "player_realm_protection_level_1_name"
+                                }
+                            }
+                            bpc_option_box = {
+                                datacontext = "[GetScriptedGui('player_realm_protection_level_2')]"
+                                blockoverride "text" {
+                                    using = text_label_center_background
+                                    text = "player_realm_protection_level_2_name"
+                                }
+                            }
+                            bpc_option_box = {
+                                datacontext = "[GetScriptedGui('player_realm_protection_level_3')]"
+                                blockoverride "text" {
+                                    using = text_label_center_background
+                                    text = "player_realm_protection_level_3_name"
+                                }
+                            }
+                        }
+                    }
+                    vbox = {
+                        margin = { 0 10 }
+                        text_label_center = {
+                            text = "positive_genetic_protection_level_name"
+                            tooltip = "positive_genetic_protection_level_desc"
+                            default_format = "#high"
+                            fontsize = 20
+                        }
+                        hbox = {
+                            spacing = 20
+
+                            bpc_option_box = {
+                                datacontext = "[GetScriptedGui('positive_genetic_protection_level_0')]"
+                                blockoverride "text" {
+                                    using = text_label_center_background
+                                    text = "positive_genetic_protection_level_0_name"
+                                }
+                            }
+                            bpc_option_box = {
+                                datacontext = "[GetScriptedGui('positive_genetic_protection_level_1')]"
+                                blockoverride "text" {
+                                    using = text_label_center_background
+                                    text = "positive_genetic_protection_level_1_name"
+                                }
+                            }
+                            bpc_option_box = {
+                                datacontext = "[GetScriptedGui('positive_genetic_protection_level_2')]"
+                                blockoverride "text" {
+                                    using = text_label_center_background
+                                    text = "positive_genetic_protection_level_2_name"
+                                }
+                            }
+                            bpc_option_box = {
+                                datacontext = "[GetScriptedGui('positive_genetic_protection_level_3')]"
+                                blockoverride "text" {
+                                    using = text_label_center_background
+                                    text = "positive_genetic_protection_level_3_name"
+                                }
+                            }
+                        }
+                    }
+                    vbox = {
+                        margin = { 0 10 }
+                        text_label_center = {
+                            text = "mod_protection_header"
+                            tooltip = "mod_protection_header_desc"
+                            default_format = "#high"
+                            fontsize = 20
+                        }
+                        hbox = {
+                            margin = { 0 10 }
+                            spacing = 20
+
+                            bpc_option_box = {
+                                visible = "[GetGlobalVariable('anime_core_loaded').IsSet]"
+                                datacontext = "[GetScriptedGui('waifu_protection')]"
+                                blockoverride "text" {
+                                    using = text_label_center_background
+                                    text = "waifu_protection_name"
+                                }
+                            }
+                            bpc_option_box = {
+                                visible = "[GetGlobalVariable('AGOT_is_loaded').IsSet]"
+                                datacontext = "[GetScriptedGui('AGOT_dragon_protection')]"
+                                blockoverride "text" {
+                                    using = text_label_center_background
+                                    text = "AGOT_dragon_protection_name"
+                                }
+                            }
+                            bpc_option_box = {
+                                datacontext = "[GetScriptedGui('GH_magic_protection')]"
+                                visible = "[ScriptedGui.IsValid( GuiScope.End )]"
+                                blockoverride "text" {
+                                    using = text_label_center_background
+                                    text = "GH_magic_protection_name"
+                                }
+                            }
+                            bpc_option_box = {
+                                visible = "[GetGlobalVariable('elf_destiny_is_loaded').IsSet]"
+                                datacontext = "[GetScriptedGui('elf_destiny_protection')]"
+                                blockoverride "text" {
+                                    using = text_label_center_background
+                                    text = "elf_destiny_protection_name"
+                                }
+                            }
+                            bpc_option_box = {
+                                visible = "[GetGlobalVariable('witchcraft_is_loaded').IsSet]"
+                                datacontext = "[GetScriptedGui('witchcraft_protection')]"
+                                blockoverride "text" {
+                                    using = text_label_center_background
+                                    text = "witchcraft_protection_name"
+                                }
+                            }
+                        }
+                        hbox = {
+                            margin = { 0 10 }
+                            spacing = 20
+
+                            bpc_option_box = {
+                                visible = "[GetGlobalVariable('pure_blooded_expanded_is_loaded').IsSet]"
+                                datacontext = "[GetScriptedGui('pure_blooded_expanded_protection')]"
+                                blockoverride "text" {
+                                    using = text_label_center_background
+                                    text = "pure_blooded_expanded_protection_name"
+                                }
+                            }
+                            bpc_option_box = {
+                                visible = "[GetGlobalVariable('pantheon_of_the_gods_is_loaded').IsSet]"
+                                datacontext = "[GetScriptedGui('pantheon_of_the_gods_protection')]"
+                                blockoverride "text" {
+                                    using = text_label_center_background
+                                    text = "pantheon_of_the_gods_protection_name"
+                                }
+                            }
+                            bpc_option_box = {
+                                visible = "[GetGlobalVariable('highlander_expanded_is_loaded').IsSet]"
+                                datacontext = "[GetScriptedGui('highlander_expanded_protection')]"
+                                blockoverride "text" {
+                                    using = text_label_center_background
+                                    text = "highlander_expanded_protection_name"
+                                }
+                            }
+                            bpc_option_box = {
+                                visible = "[GetGlobalVariable('highlander_normal_is_loaded').IsSet]"
+                                datacontext = "[GetScriptedGui('highlander_normal_protection')]"
+                                blockoverride "text" {
+                                    using = text_label_center_background
+                                    text = "highlander_normal_protection_name"
+                                }
+                            }
+                        }
+                        hbox = {
+                            margin = { 0 10 }
+                            spacing = 20
+
+                            bpc_option_box = {
+                                visible = "[GetGlobalVariable('immortals_revised_mod_is_loaded').IsSet]"
+                                datacontext = "[GetScriptedGui('immortals_revised_mod_protection')]"
+                                blockoverride "text" {
+                                    using = text_label_center_background
+                                    text = "immortals_revised_mod_protection_name"
+                                }
+                            }
+                            bpc_option_box = {
+                                visible = "[GetGlobalVariable('immortals_improved_mod_is_loaded').IsSet]"
+                                datacontext = "[GetScriptedGui('immortals_improved_mod_protection')]"
+                                blockoverride "text" {
+                                    using = text_label_center_background
+                                    text = "immortals_improved_mod_protection_name"
+                                }
+                            }
+                            bpc_option_box = {
+                                visible = "[GetGlobalVariable('the_beast_is_loaded').IsSet]"
+                                datacontext = "[GetScriptedGui('the_beast_protection')]"
+                                blockoverride "text" {
+                                    using = text_label_center_background
+                                    text = "the_beast_protection_name"
+                                }
+                            }
+                            bpc_option_box = {
+                                visible = "[GetGlobalVariable('age_of_dragons_reborn_is_loaded').IsSet]"
+                                datacontext = "[GetScriptedGui('age_of_dragons_reborn_protection')]"
+                                blockoverride "text" {
+                                    using = text_label_center_background
+                                    text = "age_of_dragons_reborn_protection_name"
+                                }
+                            }
+                        }
+                        hbox = {
+                            margin = { 0 10 }
+                            spacing = 20
+
+                            bpc_option_box = {
+                                visible = "[GetGlobalVariable('agot_is_loaded').IsSet]"
+                                datacontext = "[GetScriptedGui('agot_protection')]"
+                                blockoverride "text" {
+                                    using = text_label_center_background
+                                    text = "agot_protection_name"
+                                }
+                            }
+                            bpc_option_box = {
+                                visible = "[GetGlobalVariable('apotheosis_is_loaded').IsSet]"
+                                datacontext = "[GetScriptedGui('apotheosis_protection')]"
+                                blockoverride "text" {
+                                    using = text_label_center_background
+                                    text = "apotheosis_protection_name"
+                                }
+                            }
+                            bpc_option_box = {
+                                visible = "[GetGlobalVariable('arcane_legacy_3_is_loaded').IsSet]"
+                                datacontext = "[GetScriptedGui('arcane_legacy_3_protection')]"
+                                blockoverride "text" {
+                                    using = text_label_center_background
+                                    text = "arcane_legacy_3_protection_name"
+                                }
+                            }
+                            bpc_option_box = {
+                                visible = "[GetGlobalVariable('arcane_legacy_2_is_loaded').IsSet]"
+                                datacontext = "[GetScriptedGui('arcane_legacy_2_protection')]"
+                                blockoverride "text" {
+                                    using = text_label_center_background
+                                    text = "arcane_legacy_2_protection_name"
+                                }
+                            }
+                        }
+                        hbox = {
+                            margin = { 0 10 }
+                            spacing = 20
+
+                            bpc_option_box = {
+                                visible = "[GetGlobalVariable('more_congenital_traits_is_loaded').IsSet]"
+                                datacontext = "[GetScriptedGui('more_congenital_traits_protection')]"
+                                blockoverride "text" {
+                                    using = text_label_center_background
+                                    text = "more_congenital_traits_protection_name"
+                                }
+                            }
+                            bpc_option_box = {
+                                visible = "[GetGlobalVariable('ary_new_commander_is_loaded').IsSet]"
+                                datacontext = "[GetScriptedGui('ary_new_commander_protection')]"
+                                blockoverride "text" {
+                                    using = text_label_center_background
+                                    text = "ary_new_commander_protection_name"
+                                }
+                            }
+                            bpc_option_box = {
+                                visible = "[GetGlobalVariable('inheritable_traits_plus_is_loaded').IsSet]"
+                                datacontext = "[GetScriptedGui('inheritable_traits_plus_protection')]"
+                                blockoverride "text" {
+                                    using = text_label_center_background
+                                    text = "inheritable_traits_plus_protection_name"
+                                }
+                            }
+                            bpc_option_box = {
+                                visible = "[GetGlobalVariable('lifespan_traits_is_loaded').IsSet]"
+                                datacontext = "[GetScriptedGui('lifespan_traits_protection')]"
+                                blockoverride "text" {
+                                    using = text_label_center_background
+                                    text = "lifespan_traits_protection_name"
+                                }
+                            }
+                        }
+                        hbox = {
+                            margin = { 0 10 }
+                            spacing = 20
+
+                            bpc_option_box = {
+                                visible = "[GetGlobalVariable('vampirism_lycanthropy_is_loaded').IsSet]"
+                                datacontext = "[GetScriptedGui('vampirism_lycanthropy_protection')]"
+                                blockoverride "text" {
+                                    using = text_label_center_background
+                                    text = "vampirism_lycanthropy_protection_name"
+                                }
+                            }
+                            bpc_option_box = {
+                                visible = "[GetGlobalVariable('supernatural_is_loaded').IsSet]"
+                                datacontext = "[GetScriptedGui('supernatural_protection')]"
+                                blockoverride "text" {
+                                    using = text_label_center_background
+                                    text = "supernatural_protection_name"
+                                }
+                            }
+                            bpc_option_box = {
+                                visible = "[GetGlobalVariable('petty_inheritable_is_loaded').IsSet]"
+                                datacontext = "[GetScriptedGui('petty_inheritable_protection')]"
+                                blockoverride "text" {
+                                    using = text_label_center_background
+                                    text = "petty_inheritable_protection_name"
+                                }
+                            }
+                            bpc_option_box = {
+                                visible = "[GetGlobalVariable('positive_congenital_is_loaded').IsSet]"
+                                datacontext = "[GetScriptedGui('positive_congenital_protection')]"
+                                blockoverride "text" {
+                                    using = text_label_center_background
+                                    text = "positive_congenital_protection_name"
+                                }
+                            }
+                        }
+                        hbox = {
+                            margin = { 0 10 }
+                            spacing = 20
+
+                            bpc_option_box = {
+                                visible = "[GetGlobalVariable('negative_congenital_is_loaded').IsSet]"
+                                datacontext = "[GetScriptedGui('negative_congenital_protection')]"
+                                blockoverride "text" {
+                                    using = text_label_center_background
+                                    text = "negative_congenital_protection_name"
+                                }
+                            }
+                            bpc_option_box = {
+                                visible = "[GetGlobalVariable('special_congenital_is_loaded').IsSet]"
+                                datacontext = "[GetScriptedGui('special_congenital_protection')]"
+                                blockoverride "text" {
+                                    using = text_label_center_background
+                                    text = "special_congenital_protection_name"
+                                }
+                            }
+                            bpc_option_box = {
+                                visible = "[GetGlobalVariable('sapphos_daughter_2_is_loaded').IsSet]"
+                                datacontext = "[GetScriptedGui('sapphos_daughter_2_protection')]"
+                                blockoverride "text" {
+                                    using = text_label_center_background
+                                    text = "sapphos_daughter_2_protection_name"
+                                }
+                            }
+                            bpc_option_box = {
+                                visible = "[GetGlobalVariable('old_valyria_lite_is_loaded').IsSet]"
+                                datacontext = "[GetScriptedGui('old_valyria_lite_protection')]"
+                                blockoverride "text" {
+                                    using = text_label_center_background
+                                    text = "old_valyria_lite_protection_name"
+                                }
+                            }
+                        }
+                        hbox = {
+                            margin = { 0 10 }
+                            spacing = 20
+
+                            bpc_option_box = {
+                                visible = "[GetGlobalVariable('education_5_is_loaded').IsSet]"
+                                datacontext = "[GetScriptedGui('education_5_protection')]"
+                                blockoverride "text" {
+                                    using = text_label_center_background
+                                    text = "education_5_protection_name"
+                                }
+                            }
+                            bpc_option_box = {
+                                visible = "[GetGlobalVariable('dense_muscles_is_loaded').IsSet]"
+                                datacontext = "[GetScriptedGui('dense_muscles_protection')]"
+                                blockoverride "text" {
+                                    using = text_label_center_background
+                                    text = "dense_muscles_protection_name"
+                                }
+                            }
+                            bpc_option_box = {
+                                visible = "[GetGlobalVariable('become_hero_is_loaded').IsSet]"
+                                datacontext = "[GetScriptedGui('become_hero_protection')]"
+                                blockoverride "text" {
+                                    using = text_label_center_background
+                                    text = "become_hero_protection_name"
+                                }
+                            }
+                            bpc_option_box = {
+                                visible = "[GetGlobalVariable('rice_is_loaded').IsSet]"
+                                datacontext = "[GetScriptedGui('rice_protection')]"
+                                blockoverride "text" {
+                                    using = text_label_center_background
+                                    text = "rice_protection_name"
+                                }
+                            }
+                        }
+                        hbox = {
+                            margin = { 0 10 }
+                            spacing = 20
+
+                            bpc_option_box = {
+                                visible = "[GetGlobalVariable('elf_lotr_submod_is_loaded').IsSet]"
+                                datacontext = "[GetScriptedGui('elf_lotr_submod_protection')]"
+                                blockoverride "text" {
+                                    using = text_label_center_background
+                                    text = "elf_lotr_submod_protection_name"
+                                }
+                            }
+                            bpc_option_box = {
+                                visible = "[GetGlobalVariable('elf_atlantis_submod_is_loaded').IsSet]"
+                                datacontext = "[GetScriptedGui('elf_atlantis_submod_protection')]"
+                                blockoverride "text" {
+                                    using = text_label_center_background
+                                    text = "elf_atlantis_submod_protection_name"
+                                }
+                            }
+                            bpc_option_box = {
+                                visible = "[GetGlobalVariable('elf_superiority_submod_is_loaded').IsSet]"
+                                datacontext = "[GetScriptedGui('elf_superiority_submod_protection')]"
+                                blockoverride "text" {
+                                    using = text_label_center_background
+                                    text = "elf_superiority_submod_protection_name"
+                                }
+                            }
+                            bpc_option_box = {
+                                visible = "[GetGlobalVariable('the_road_of_god_is_loaded').IsSet]"
+                                datacontext = "[GetScriptedGui('the_road_of_god_protection')]"
+                                blockoverride "text" {
+                                    using = text_label_center_background
+                                    text = "the_road_of_god_protection_name"
+                                }
+                            }
+                        }
+                    }
+                    hbox = {
+                        margin = { 0 10 }
+                        spacing = 20
+
+                        bpc_option_box = {
+                            datacontext = "[GetScriptedGui('court_position_protection')]"
+                            blockoverride "text" {
+                                using = text_label_center_background
+                                text = "court_position_protection_name"
+                            }
+                        }
+                        bpc_option_box = {
+                            datacontext = "[GetScriptedGui('inspiration_protection_1')]"
+                            blockoverride "text" {
+                                using = text_label_center_background
+                                text = "inspiration_protection_1_name"
+                            }
+                        }
+                        bpc_option_box = {
+                            datacontext = "[GetScriptedGui('inspiration_protection_2')]"
+                            blockoverride "text" {
+                                using = text_label_center_background
+                                text = "inspiration_protection_2_name"
+                            }
+                        }
+                    }
+                    hbox = {
+                        margin = { 0 10 }
+                        spacing = 20
+
+                        bpc_option_box = {
+                            datacontext = "[GetScriptedGui('historical_character_protection')]"
+                            blockoverride "text" {
+                                using = text_label_center_background
+                                text = "historical_character_protection_name"
+                            }
+                        }
+                        bpc_option_box = {
+                            datacontext = "[GetScriptedGui('activity_protection_1')]"
+                            blockoverride "text" {
+                                using = text_label_center_background
+                                text = "activity_protection_1_name"
+                            }
+                        }
+                        bpc_option_box = {
+                            datacontext = "[GetScriptedGui('activity_protection_2')]"
+                            blockoverride "text" {
+                                using = text_label_center_background
+                                text = "activity_protection_2_name"
+                            }
+                        }
+                    }
+
+                    hbox = {
+                        margin = { 0 10 }
+                        spacing = 20
+
+                        bpc_option_box = {
+                            datacontext = "[GetScriptedGui('adventurer_protection')]"
+                            blockoverride "text" {
+                                using = text_label_center_background
+                                text = "adventurer_protection_name"
+                            }
+                        }
+                        bpc_option_box = {
+                            datacontext = "[GetScriptedGui('noble_family_protection')]"
+                            blockoverride "text" {
+                                using = text_label_center_background
+                                text = "noble_family_protection_name"
+                            }
+                        }
+                        bpc_option_box = {
+                            datacontext = "[GetScriptedGui('nomad_protection')]"
+                            blockoverride "text" {
+                                using = text_label_center_background
+                                text = "nomad_protection_name"
+                            }
+                        }
+                    }
+
+
+                    hbox = {
+                        margin = { 0 10 }
+                        button_expand = {
+                            size = { 40 40 }
+                            datacontext = "[GetScriptedGui( 'base_death_chance_subtract' )]"
+                            onclick = "[ScriptedGui.Execute( GuiScope.End )]"
+                            mirror = horizontal
+                        }
+                        text_label_center = {
+                            text = "base_death_chance_header"
+                            tooltip = "base_death_chance_desc"
+                            default_format = "#high"
+                            fontsize = 20
+                        }
+                        button_expand = {
+                            size = { 40 40 }
+                            datacontext = "[GetScriptedGui( 'base_death_chance_add' )]"
+                            onclick = "[ScriptedGui.Execute( GuiScope.End )]"
+                        }
+                    }
+
+                    hbox = {
+                        hbox = {
+                            margin = { 0 10 }
+                            button_expand = {
+                                size = { 40 40 }
+                                datacontext = "[GetScriptedGui( 'infant_death_chance_multiplier_subtract' )]"
+                                onclick = "[ScriptedGui.Execute( GuiScope.End )]"
+                                mirror = horizontal
+                            }
+                            text_label_center = {
+                                text = "infant_death_chance_multiplier_header"
+                                tooltip = "infant_death_chance_multiplier_desc"
+                                default_format = "#high"
+                                fontsize = 20
+                            }
+                            button_expand = {
+                                size = { 40 40 }
+                                datacontext = "[GetScriptedGui( 'infant_death_chance_multiplier_add' )]"
+                                onclick = "[ScriptedGui.Execute( GuiScope.End )]"
+                            }
+                        }
+                        hbox = {
+                            margin = { 0 10 }
+                            button_expand = {
+                                size = { 40 40 }
+                                datacontext = "[GetScriptedGui( 'elderly_death_chance_multiplier_subtract' )]"
+                                onclick = "[ScriptedGui.Execute( GuiScope.End )]"
+                                mirror = horizontal
+                            }
+                            text_label_center = {
+                                text = "elderly_death_chance_multiplier_header"
+                                tooltip = "elderly_death_chance_multiplier_desc"
+                                default_format = "#high"
+                                fontsize = 20
+                            }
+                            button_expand = {
+                                size = { 40 40 }
+                                datacontext = "[GetScriptedGui( 'elderly_death_chance_multiplier_add' )]"
+                                onclick = "[ScriptedGui.Execute( GuiScope.End )]"
+                            }
+                        }
+                    }
+                    hbox = {
+                        hbox = {
+                            margin = { 0 10 }
+                            button_expand = {
+                                size = { 40 40 }
+                                datacontext = "[GetScriptedGui( 'prisoner_death_chance_multiplier_subtract' )]"
+                                onclick = "[ScriptedGui.Execute( GuiScope.End )]"
+                                mirror = horizontal
+                            }
+                            text_label_center = {
+                                text = "prisoner_death_chance_multiplier_header"
+                                tooltip = "prisoner_death_chance_multiplier_desc"
+                                default_format = "#high"
+                                fontsize = 20
+                            }
+                            button_expand = {
+                                size = { 40 40 }
+                                datacontext = "[GetScriptedGui( 'prisoner_death_chance_multiplier_add' )]"
+                                onclick = "[ScriptedGui.Execute( GuiScope.End )]"
+                            }
+                        }
+                        hbox = {
+                            margin = { 0 10 }
+                            button_expand = {
+                                size = { 40 40 }
+                                datacontext = "[GetScriptedGui( 'player_distance_death_chance_multiplier_subtract' )]"
+                                onclick = "[ScriptedGui.Execute( GuiScope.End )]"
+                                mirror = horizontal
+                            }
+                            text_label_center = {
+                                text = "player_distance_death_chance_multiplier_header"
+                                tooltip = "player_distance_death_chance_multiplier_desc"
+                                default_format = "#high"
+                                fontsize = 20
+                            }
+                            button_expand = {
+                                size = { 40 40 }
+                                datacontext = "[GetScriptedGui( 'player_distance_death_chance_multiplier_add' )]"
+                                onclick = "[ScriptedGui.Execute( GuiScope.End )]"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    type bpc_option_box = button_checkbox_label {
+        layoutpolicy_horizontal = expanding
+        block "datacontext" {}
+        onclick = "[ScriptedGui.Execute( GuiScope.End )]"
+        blockoverride "checkbox" {
+            checked = "[ScriptedGui.IsShown( GuiScope.End )]"
+        }
+        block "text" {}
+    }
+}
+
+template text_label_center_background {
+    background = {
+        margin_left = 50
+        margin_right = 50
+        alpha = 0.5
+
+        texture = "gfx/interface/component_tiles/tile_title_bg_01.dds"
+        spriteType = Corneredtiled
+        spriteborder = { 40 8 }
+        texture_density = 2
+
+        modify_texture = {
+            name = "mask"
+            texture = "gfx/interface/component_masks/mask_fade_horizontal_middle_thick.dds"
+            spriteType = Corneredstretched
+            spriteborder = { 0 0 }
+            blend_mode = alphamultiply
+        }
+    }
+}

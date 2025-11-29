@@ -1,0 +1,1309 @@
+﻿open_bpc_setting_panel = {
+    is_shown = {
+        has_global_variable = open_bpc_setting_panel
+    }
+    effect = {
+        remove_global_variable = open_bpc_setting_panel
+    }
+}
+
+
+global_population_target_add = {
+    effect = {
+        change_global_variable = {
+            name = global_population_target
+            add = 1000
+        }
+    }
+}
+
+global_population_target_subtract = {
+    is_valid = {
+        global_var:global_population_target >= 2000
+    }
+    effect = {
+        change_global_variable = {
+            name = global_population_target
+            add = -1000
+        }
+    }
+}
+
+player_dynasty_protection_level_use_target = {
+    is_shown = {
+        OR = {
+            global_var:player_dynasty_protection_level ?= 1
+            global_var:player_dynasty_protection_level ?= 3
+        }
+    }
+}
+
+player_dynasty_protection_level_0 = {
+    is_shown = {
+        global_var:player_dynasty_protection_level = 0
+    }
+    effect = {
+        set_global_variable = {
+            name = player_dynasty_protection_level
+            value = 0
+        }
+    }
+}
+player_dynasty_protection_level_1 = {
+    is_shown = {
+        global_var:player_dynasty_protection_level = 1
+    }
+    effect = {
+        set_global_variable = {
+            name = player_dynasty_protection_level
+            value = 1
+        }
+    }
+}
+player_dynasty_protection_level_2 = {
+    is_shown = {
+        global_var:player_dynasty_protection_level = 2
+    }
+    effect = {
+        set_global_variable = {
+            name = player_dynasty_protection_level
+            value = 2
+        }
+    }
+}
+player_dynasty_protection_level_3 = {
+    is_shown = {
+        global_var:player_dynasty_protection_level = 3
+    }
+    effect = {
+        set_global_variable = {
+            name = player_dynasty_protection_level
+            value = 3
+        }
+    }
+}
+player_dynasty_protection_level_4 = {
+    is_shown = {
+        global_var:player_dynasty_protection_level = 4
+    }
+    effect = {
+        set_global_variable = {
+            name = player_dynasty_protection_level
+            value = 4
+        }
+    }
+}
+
+player_dynasty_population_target_add = {
+    effect = {
+        change_global_variable = {
+            name = player_dynasty_population_target
+            add = 100
+        }
+    }
+}
+player_dynasty_population_target_subtract = {
+    is_valid = {
+        global_var:player_dynasty_population_target >= 200
+    }
+    effect = {
+        change_global_variable = {
+            name = player_dynasty_population_target
+            add = -100
+        }
+    }
+}
+
+heir_protection_count_add = {
+    is_valid = {
+        global_var:heir_protection_count < 5
+    }
+    effect = {
+        change_global_variable = {
+            name = heir_protection_count
+            add = 1
+        }
+    }
+}
+heir_protection_count_subtract = {
+    is_valid = {
+        global_var:heir_protection_count >= 1
+    }
+    effect = {
+        change_global_variable = {
+            name = heir_protection_count
+            add = -1
+        }
+    }
+}
+
+ruler_protection_tier_0 = {
+    is_shown = {
+        global_var:ruler_protection_tier = 0
+    }
+    effect = {
+        set_global_variable = {
+            name = ruler_protection_tier
+            value = 0
+        }
+    }
+}
+ruler_protection_tier_1 = {
+    is_shown = {
+        global_var:ruler_protection_tier = 1
+    }
+    effect = {
+        set_global_variable = {
+            name = ruler_protection_tier
+            value = 1
+        }
+    }
+}
+ruler_protection_tier_2 = {
+    is_shown = {
+        global_var:ruler_protection_tier = 2
+    }
+    effect = {
+        set_global_variable = {
+            name = ruler_protection_tier
+            value = 2
+        }
+    }
+}
+ruler_protection_tier_3 = {
+    is_shown = {
+        global_var:ruler_protection_tier = 3
+    }
+    effect = {
+        set_global_variable = {
+            name = ruler_protection_tier
+            value = 3
+        }
+    }
+}
+ruler_protection_tier_4 = {
+    is_shown = {
+        global_var:ruler_protection_tier = 4
+    }
+    effect = {
+        set_global_variable = {
+            name = ruler_protection_tier
+            value = 4
+        }
+    }
+}
+ruler_protection_tier_5 = {
+    is_shown = {
+        global_var:ruler_protection_tier = 5
+    }
+    effect = {
+        set_global_variable = {
+            name = ruler_protection_tier
+            value = 5
+        }
+    }
+}
+
+dynasty_protection_multiplier_add = {
+    is_valid = {
+        global_var:dynasty_protection_multiplier < 10
+    }
+    effect = {
+        change_global_variable = {
+            name = dynasty_protection_multiplier
+            add = 1
+        }
+    }
+}
+dynasty_protection_multiplier_subtract = {
+    is_valid = {
+        global_var:dynasty_protection_multiplier >= 1
+    }
+    effect = {
+        change_global_variable = {
+            name = dynasty_protection_multiplier
+            add = -1
+        }
+    }
+}
+
+player_family_protection_level_0 = {
+    is_shown = {
+        global_var:player_family_protection_level = 0
+    }
+    effect = {
+        set_global_variable = {
+            name = player_family_protection_level
+            value = 0
+        }
+    }
+}
+player_family_protection_level_1 = {
+    is_shown = {
+        global_var:player_family_protection_level = 1
+    }
+    effect = {
+        set_global_variable = {
+            name = player_family_protection_level
+            value = 1
+        }
+    }
+}
+player_family_protection_level_2 = {
+    is_shown = {
+        global_var:player_family_protection_level = 2
+    }
+    effect = {
+        set_global_variable = {
+            name = player_family_protection_level
+            value = 2
+        }
+    }
+}
+
+player_relation_protection_level_0 = {
+    is_shown = {
+        global_var:player_relation_protection_level = 0
+    }
+    effect = {
+        set_global_variable = {
+            name = player_relation_protection_level
+            value = 0
+        }
+    }
+}
+player_relation_protection_level_1 = {
+    is_shown = {
+        global_var:player_relation_protection_level = 1
+    }
+    effect = {
+        set_global_variable = {
+            name = player_relation_protection_level
+            value = 1
+        }
+    }
+}
+player_relation_protection_level_2 = {
+    is_shown = {
+        global_var:player_relation_protection_level = 2
+    }
+    effect = {
+        set_global_variable = {
+            name = player_relation_protection_level
+            value = 2
+        }
+    }
+}
+
+player_realm_protection_level_0 = {
+    is_shown = {
+        global_var:player_realm_protection_level = 0
+    }
+    effect = {
+        set_global_variable = {
+            name = player_realm_protection_level
+            value = 0
+        }
+    }
+}
+player_realm_protection_level_1 = {
+    is_shown = {
+        global_var:player_realm_protection_level = 1
+    }
+    effect = {
+        set_global_variable = {
+            name = player_realm_protection_level
+            value = 1
+        }
+    }
+}
+player_realm_protection_level_2 = {
+    is_shown = {
+        global_var:player_realm_protection_level = 2
+    }
+    effect = {
+        set_global_variable = {
+            name = player_realm_protection_level
+            value = 2
+        }
+    }
+}
+player_realm_protection_level_3 = {
+    is_shown = {
+        global_var:player_realm_protection_level = 3
+    }
+    effect = {
+        set_global_variable = {
+            name = player_realm_protection_level
+            value = 3
+        }
+    }
+}
+
+positive_genetic_protection_level_0 = {
+    is_shown = {
+        global_var:positive_genetic_protection_level = 0
+    }
+    effect = {
+        set_global_variable = {
+            name = positive_genetic_protection_level
+            value = 0
+        }
+    }
+}
+positive_genetic_protection_level_1 = {
+    is_shown = {
+        global_var:positive_genetic_protection_level = 1
+    }
+    effect = {
+        set_global_variable = {
+            name = positive_genetic_protection_level
+            value = 1
+        }
+    }
+}
+positive_genetic_protection_level_2 = {
+    is_shown = {
+        global_var:positive_genetic_protection_level = 2
+    }
+    effect = {
+        set_global_variable = {
+            name = positive_genetic_protection_level
+            value = 2
+        }
+    }
+}
+positive_genetic_protection_level_3 = {
+    is_shown = {
+        global_var:positive_genetic_protection_level = 3
+    }
+    effect = {
+        set_global_variable = {
+            name = positive_genetic_protection_level
+            value = 3
+        }
+    }
+}
+
+court_position_protection = {
+    is_shown = {
+        exists = global_var:court_position_protection
+    }
+    effect = {
+        if = {
+            limit = {
+                exists = global_var:court_position_protection
+            }
+            remove_global_variable = court_position_protection
+        }
+        else = {
+            set_global_variable = court_position_protection
+        }
+    }
+}
+inspiration_protection_1 = {
+    is_shown = {
+        global_var:inspiration_protection >= 1
+    }
+    effect = {
+        if = {
+            limit = {
+                global_var:inspiration_protection ?= 1
+            }
+            set_global_variable = {
+                name = inspiration_protection
+                value = 0
+            }
+        }
+        else = {
+            set_global_variable = {
+                name = inspiration_protection
+                value = 1
+            }
+        }
+    }
+}
+inspiration_protection_2 = {
+    is_shown = {
+        global_var:inspiration_protection = 2
+    }
+    effect = {
+        if = {
+            limit = {
+                global_var:inspiration_protection ?= 2
+            }
+            set_global_variable = {
+                name = inspiration_protection
+                value = 0
+            }
+        }
+        else = {
+            set_global_variable = {
+                name = inspiration_protection
+                value = 2
+            }
+        }
+    }
+}
+
+historical_character_protection = {
+    is_shown = {
+        exists = global_var:historical_character_protection
+    }
+    effect = {
+        if = {
+            limit = {
+                exists = global_var:historical_character_protection
+            }
+            remove_global_variable = historical_character_protection
+        }
+        else = {
+            set_global_variable = historical_character_protection
+        }
+    }
+}
+activity_protection_1 = {
+    is_shown = {
+        global_var:activity_protection >= 1
+    }
+    effect = {
+        if = {
+            limit = {
+                global_var:activity_protection ?= 1
+            }
+            set_global_variable = {
+                name = activity_protection
+                value = 0
+            }
+        }
+        else = {
+            set_global_variable = {
+                name = activity_protection
+                value = 1
+            }
+        }
+    }
+}
+activity_protection_2 = {
+    is_shown = {
+        global_var:activity_protection = 2
+    }
+    effect = {
+        if = {
+            limit = {
+                global_var:activity_protection ?= 2
+            }
+            set_global_variable = {
+                name = activity_protection
+                value = 0
+            }
+        }
+        else = {
+            set_global_variable = {
+                name = activity_protection
+                value = 2
+            }
+        }
+    }
+}
+
+adventurer_protection = {
+    is_shown = {
+        exists = global_var:adventurer_protection
+    }
+    effect = {
+        if = {
+            limit = {
+                exists = global_var:adventurer_protection
+            }
+            remove_global_variable = adventurer_protection
+        }
+        else = {
+            set_global_variable = adventurer_protection
+        }
+    }
+}
+noble_family_protection = {
+    is_shown = {
+        exists = global_var:noble_family_protection
+    }
+    effect = {
+        if = {
+            limit = {
+                exists = global_var:noble_family_protection
+            }
+            remove_global_variable = noble_family_protection
+        }
+        else = {
+            set_global_variable = noble_family_protection
+        }
+    }
+}
+nomad_protection = {
+    is_shown = {
+        exists = global_var:nomad_protection
+    }
+    effect = {
+        if = {
+            limit = {
+                exists = global_var:nomad_protection
+            }
+            remove_global_variable = nomad_protection
+        }
+        else = {
+            set_global_variable = nomad_protection
+        }
+    }
+}
+# mods
+waifu_protection = {
+    is_shown = {
+        exists = global_var:waifu_protection
+    }
+    effect = {
+        if = {
+            limit = {
+                exists = global_var:waifu_protection
+            }
+            remove_global_variable = waifu_protection
+        }
+        else = {
+            set_global_variable = waifu_protection
+        }
+    }
+}
+AGOT_dragon_protection = {
+    is_shown = {
+        exists = global_var:AGOT_dragon_protection
+    }
+    effect = {
+        if = {
+            limit = {
+                exists = global_var:AGOT_dragon_protection
+            }
+            remove_global_variable = AGOT_dragon_protection
+        }
+        else = {
+            set_global_variable = AGOT_dragon_protection
+        }
+    }
+}
+GH_magic_protection = {
+    is_shown = {
+        exists = global_var:GH_magic_protection
+    }
+    # they don't have a gvar.
+    is_valid = {
+        godherja_loaded = yes
+    }
+    effect = {
+        if = {
+            limit = {
+                exists = global_var:GH_magic_protection
+            }
+            remove_global_variable = GH_magic_protection
+        }
+        else = {
+            set_global_variable = GH_magic_protection
+        }
+    }
+}
+
+elf_destiny_protection = {
+    is_shown = {
+        exists = global_var:elf_destiny_protection
+    }
+    effect = {
+        if = {
+            limit = {
+                exists = global_var:elf_destiny_protection
+            }
+            remove_global_variable = elf_destiny_protection
+        }
+        else = {
+            set_global_variable = elf_destiny_protection
+        }
+    }
+}
+
+
+witchcraft_protection = {
+    is_shown = {
+        exists = global_var:witchcraft_protection
+    }
+    effect = {
+        if = {
+            limit = {
+                exists = global_var:witchcraft_protection
+            }
+            remove_global_variable = witchcraft_protection
+        }
+        else = {
+            set_global_variable = witchcraft_protection
+        }
+    }
+}
+
+pure_blooded_expanded_protection = {
+    is_shown = {
+        exists = global_var:pure_blooded_expanded_protection
+    }
+    effect = {
+        if = {
+            limit = {
+                exists = global_var:pure_blooded_expanded_protection
+            }
+            remove_global_variable = pure_blooded_expanded_protection
+        }
+        else = {
+            set_global_variable = pure_blooded_expanded_protection
+        }
+    }
+}
+
+pantheon_of_the_gods_protection = {
+    is_shown = {
+        exists = global_var:pantheon_of_the_gods_protection
+    }
+    effect = {
+        if = {
+            limit = {
+                exists = global_var:pantheon_of_the_gods_protection
+            }
+            remove_global_variable = pantheon_of_the_gods_protection
+        }
+        else = {
+            set_global_variable = pantheon_of_the_gods_protection
+        }
+    }
+}
+
+highlander_expanded_protection = {
+    is_shown = {
+        exists = global_var:highlander_expanded_protection
+    }
+    effect = {
+        if = {
+            limit = {
+                exists = global_var:highlander_expanded_protection
+            }
+            remove_global_variable = highlander_expanded_protection
+        }
+        else = {
+            set_global_variable = highlander_expanded_protection
+        }
+    }
+}
+
+highlander_normal_protection = {
+    is_shown = {
+        exists = global_var:highlander_normal_protection
+    }
+    effect = {
+        if = {
+            limit = {
+                exists = global_var:highlander_normal_protection
+            }
+            remove_global_variable = highlander_normal_protection
+        }
+        else = {
+            set_global_variable = highlander_normal_protection
+        }
+    }
+}
+
+immortals_revised_mod_protection = {
+    is_shown = {
+        exists = global_var:immortals_revised_mod_protection
+    }
+    effect = {
+        if = {
+            limit = {
+                exists = global_var:immortals_revised_mod_protection
+            }
+            remove_global_variable = immortals_revised_mod_protection
+        }
+        else = {
+            set_global_variable = immortals_revised_mod_protection
+        }
+    }
+}
+
+immortals_improved_mod_protection = {
+    is_shown = {
+        exists = global_var:immortals_improved_mod_protection
+    }
+    effect = {
+        if = {
+            limit = {
+                exists = global_var:immortals_improved_mod_protection
+            }
+            remove_global_variable = immortals_improved_mod_protection
+        }
+        else = {
+            set_global_variable = immortals_improved_mod_protection
+        }
+    }
+}
+
+elf_superiority_submod_protection = {
+    is_shown = {
+        exists = global_var:elf_superiority_submod_protection
+    }
+    effect = {
+        if = {
+            limit = {
+                exists = global_var:elf_superiority_submod_protection
+            }
+            remove_global_variable = elf_superiority_submod_protection
+        }
+        else = {
+            set_global_variable = elf_superiority_submod_protection
+        }
+    }
+}
+
+elf_lotr_submod_protection = {
+    is_shown = {
+        exists = global_var:elf_lotr_submod_protection
+    }
+    effect = {
+        if = {
+            limit = {
+                exists = global_var:elf_lotr_submod_protection
+            }
+            remove_global_variable = elf_lotr_submod_protection
+        }
+        else = {
+            set_global_variable = elf_lotr_submod_protection
+        }
+    }
+}
+
+elf_atlantis_submod_protection = {
+    is_shown = {
+        exists = global_var:elf_atlantis_submod_protection
+    }
+    effect = {
+        if = {
+            limit = {
+                exists = global_var:elf_atlantis_submod_protection
+            }
+            remove_global_variable = elf_atlantis_submod_protection
+        }
+        else = {
+            set_global_variable = elf_atlantis_submod_protection
+        }
+    }
+}
+
+the_road_of_god_protection = {
+    is_shown = {
+        exists = global_var:the_road_of_god_protection
+    }
+    effect = {
+        if = {
+            limit = {
+                exists = global_var:the_road_of_god_protection
+            }
+            remove_global_variable = the_road_of_god_protection
+        }
+        else = {
+            set_global_variable = the_road_of_god_protection
+        }
+    }
+}
+
+the_beast_protection = {
+    is_shown = {
+        exists = global_var:the_beast_protection
+    }
+    effect = {
+        if = {
+            limit = {
+                exists = global_var:the_beast_protection
+            }
+            remove_global_variable = the_beast_protection
+        }
+        else = {
+            set_global_variable = the_beast_protection
+        }
+    }
+}
+
+age_of_dragons_reborn_protection = {
+    is_shown = {
+        exists = global_var:age_of_dragons_reborn_protection
+    }
+    effect = {
+        if = {
+            limit = {
+                exists = global_var:age_of_dragons_reborn_protection
+            }
+            remove_global_variable = age_of_dragons_reborn_protection
+        }
+        else = {
+            set_global_variable = age_of_dragons_reborn_protection
+        }
+    }
+}
+
+agot_protection = {
+    is_shown = {
+        exists = global_var:agot_protection
+    }
+    effect = {
+        if = {
+            limit = {
+                exists = global_var:agot_protection
+            }
+            remove_global_variable = agot_protection
+        }
+        else = {
+            set_global_variable = agot_protection
+        }
+    }
+}
+
+apotheosis_protection = {
+    is_shown = {
+        exists = global_var:apotheosis_protection
+    }
+    effect = {
+        if = {
+            limit = {
+                exists = global_var:apotheosis_protection
+            }
+            remove_global_variable = apotheosis_protection
+        }
+        else = {
+            set_global_variable = apotheosis_protection
+        }
+    }
+}
+
+arcane_legacy_3_protection = {
+    is_shown = {
+        exists = global_var:arcane_legacy_3_protection
+    }
+    effect = {
+        if = {
+            limit = {
+                exists = global_var:arcane_legacy_3_protection
+            }
+            remove_global_variable = arcane_legacy_3_protection
+        }
+        else = {
+            set_global_variable = arcane_legacy_3_protection
+        }
+    }
+}
+
+arcane_legacy_2_protection = {
+    is_shown = {
+        exists = global_var:arcane_legacy_2_protection
+    }
+    effect = {
+        if = {
+            limit = {
+                exists = global_var:arcane_legacy_2_protection
+            }
+            remove_global_variable = arcane_legacy_2_protection
+        }
+        else = {
+            set_global_variable = arcane_legacy_2_protection
+        }
+    }
+}
+
+more_congenital_traits_protection = {
+    is_shown = {
+        exists = global_var:more_congenital_traits_protection
+    }
+    effect = {
+        if = {
+            limit = {
+                exists = global_var:more_congenital_traits_protection
+            }
+            remove_global_variable = more_congenital_traits_protection
+        }
+        else = {
+            set_global_variable = more_congenital_traits_protection
+        }
+    }
+}
+
+ary_new_commander_protection = {
+    is_shown = {
+        exists = global_var:ary_new_commander_protection
+    }
+    effect = {
+        if = {
+            limit = {
+                exists = global_var:ary_new_commander_protection
+            }
+            remove_global_variable = ary_new_commander_protection
+        }
+        else = {
+            set_global_variable = ary_new_commander_protection
+        }
+    }
+}
+
+inheritable_traits_plus_protection = {
+    is_shown = {
+        exists = global_var:inheritable_traits_plus_protection
+    }
+    effect = {
+        if = {
+            limit = {
+                exists = global_var:inheritable_traits_plus_protection
+            }
+            remove_global_variable = inheritable_traits_plus_protection
+        }
+        else = {
+            set_global_variable = inheritable_traits_plus_protection
+        }
+    }
+}
+
+lifespan_traits_protection = {
+    is_shown = {
+        exists = global_var:lifespan_traits_protection
+    }
+    effect = {
+        if = {
+            limit = {
+                exists = global_var:lifespan_traits_protection
+            }
+            remove_global_variable = lifespan_traits_protection
+        }
+        else = {
+            set_global_variable = lifespan_traits_protection
+        }
+    }
+}
+
+vampirism_lycanthropy_protection = {
+    is_shown = {
+        exists = global_var:vampirism_lycanthropy_protection
+    }
+    effect = {
+        if = {
+            limit = {
+                exists = global_var:vampirism_lycanthropy_protection
+            }
+            remove_global_variable = vampirism_lycanthropy_protection
+        }
+        else = {
+            set_global_variable = vampirism_lycanthropy_protection
+        }
+    }
+}
+
+supernatural_protection = {
+    is_shown = {
+        exists = global_var:supernatural_protection
+    }
+    effect = {
+        if = {
+            limit = {
+                exists = global_var:supernatural_protection
+            }
+            remove_global_variable = supernatural_protection
+        }
+        else = {
+            set_global_variable = supernatural_protection
+        }
+    }
+}
+
+petty_inheritable_protection = {
+    is_shown = {
+        exists = global_var:petty_inheritable_protection
+    }
+    effect = {
+        if = {
+            limit = {
+                exists = global_var:petty_inheritable_protection
+            }
+            remove_global_variable = petty_inheritable_protection
+        }
+        else = {
+            set_global_variable = petty_inheritable_protection
+        }
+    }
+}
+
+positive_congenital_protection = {
+    is_shown = {
+        exists = global_var:positive_congenital_protection
+    }
+    effect = {
+        if = {
+            limit = {
+                exists = global_var:positive_congenital_protection
+            }
+            remove_global_variable = positive_congenital_protection
+        }
+        else = {
+            set_global_variable = positive_congenital_protection
+        }
+    }
+}
+
+negative_congenital_protection = {
+    is_shown = {
+        exists = global_var:negative_congenital_protection
+    }
+    effect = {
+        if = {
+            limit = {
+                exists = global_var:negative_congenital_protection
+            }
+            remove_global_variable = negative_congenital_protection
+        }
+        else = {
+            set_global_variable = negative_congenital_protection
+        }
+    }
+}
+
+special_congenital_protection = {
+    is_shown = {
+        exists = global_var:special_congenital_protection
+    }
+    effect = {
+        if = {
+            limit = {
+                exists = global_var:special_congenital_protection
+            }
+            remove_global_variable = special_congenital_protection
+        }
+        else = {
+            set_global_variable = special_congenital_protection
+        }
+    }
+}
+
+sapphos_daughter_2_protection = {
+    is_shown = {
+        exists = global_var:sapphos_daughter_2_protection
+    }
+    effect = {
+        if = {
+            limit = {
+                exists = global_var:sapphos_daughter_2_protection
+            }
+            remove_global_variable = sapphos_daughter_2_protection
+        }
+        else = {
+            set_global_variable = sapphos_daughter_2_protection
+        }
+    }
+}
+
+old_valyria_lite_protection = {
+    is_shown = {
+        exists = global_var:old_valyria_lite_protection
+    }
+    effect = {
+        if = {
+            limit = {
+                exists = global_var:old_valyria_lite_protection
+            }
+            remove_global_variable = old_valyria_lite_protection
+        }
+        else = {
+            set_global_variable = old_valyria_lite_protection
+        }
+    }
+}
+
+education_5_protection = {
+    is_shown = {
+        exists = global_var:education_5_protection
+    }
+    effect = {
+        if = {
+            limit = {
+                exists = global_var:education_5_protection
+            }
+            remove_global_variable = education_5_protection
+        }
+        else = {
+            set_global_variable = education_5_protection
+        }
+    }
+}
+
+dense_muscles_protection = {
+    is_shown = {
+        exists = global_var:dense_muscles_protection
+    }
+    effect = {
+        if = {
+            limit = {
+                exists = global_var:dense_muscles_protection
+            }
+            remove_global_variable = dense_muscles_protection
+        }
+        else = {
+            set_global_variable = dense_muscles_protection
+        }
+    }
+}
+
+become_hero_protection = {
+    is_shown = {
+        exists = global_var:become_hero_protection
+    }
+    effect = {
+        if = {
+            limit = {
+                exists = global_var:become_hero_protection
+            }
+            remove_global_variable = become_hero_protection
+        }
+        else = {
+            set_global_variable = become_hero_protection
+        }
+    }
+}
+
+rice_protection = {
+    is_shown = {
+        exists = global_var:rice_protection
+    }
+    effect = {
+        if = {
+            limit = {
+                exists = global_var:rice_protection
+            }
+            remove_global_variable = rice_protection
+        }
+        else = {
+            set_global_variable = rice_protection
+        }
+    }
+}
+
+base_death_chance_add = {
+    is_valid = {
+        global_var:base_death_chance < 100
+    }
+    effect = {
+        change_global_variable = {
+            name = base_death_chance
+            add = 5
+        }
+    }
+}
+
+base_death_chance_subtract = {
+    is_valid = {
+        global_var:base_death_chance >= 10
+    }
+    effect = {
+        change_global_variable = {
+            name = base_death_chance
+            add = -5
+        }
+    }
+}
+
+infant_death_chance_multiplier_add = {
+    is_valid = {
+        global_var:infant_death_chance_multiplier < 20
+    }
+    effect = {
+        change_global_variable = {
+            name = infant_death_chance_multiplier
+            add = 0.5
+        }
+    }
+}
+
+infant_death_chance_multiplier_subtract = {
+    is_valid = {
+        global_var:infant_death_chance_multiplier >= 1
+    }
+    effect = {
+        change_global_variable = {
+            name = infant_death_chance_multiplier
+            add = -0.5
+        }
+    }
+}
+
+elderly_death_chance_multiplier_add = {
+    is_valid = {
+        global_var:elderly_death_chance_multiplier < 20
+    }
+    effect = {
+        change_global_variable = {
+            name = elderly_death_chance_multiplier
+            add = 0.5
+        }
+    }
+}
+
+elderly_death_chance_multiplier_subtract = {
+    is_valid = {
+        global_var:elderly_death_chance_multiplier >= 1
+    }
+    effect = {
+        change_global_variable = {
+            name = elderly_death_chance_multiplier
+            add = -0.5
+        }
+    }
+}
+
+prisoner_death_chance_multiplier_add = {
+    is_valid = {
+        global_var:prisoner_death_chance_multiplier < 20
+    }
+    effect = {
+        change_global_variable = {
+            name = prisoner_death_chance_multiplier
+            add = 0.5
+        }
+    }
+}
+
+prisoner_death_chance_multiplier_subtract = {
+    is_valid = {
+        global_var:prisoner_death_chance_multiplier >= 1
+    }
+    effect = {
+        change_global_variable = {
+            name = prisoner_death_chance_multiplier
+            add = -0.5
+        }
+    }
+}
+
+player_distance_death_chance_multiplier_add = {
+    is_valid = {
+        global_var:player_distance_death_chance_multiplier < 20
+    }
+    effect = {
+        change_global_variable = {
+            name = player_distance_death_chance_multiplier
+            add = 0.5
+        }
+    }
+}
+
+player_distance_death_chance_multiplier_subtract = {
+    is_valid = {
+        global_var:player_distance_death_chance_multiplier >= 1
+    }
+    effect = {
+        change_global_variable = {
+            name = player_distance_death_chance_multiplier
+            add = -0.5
+        }
+    }
+}

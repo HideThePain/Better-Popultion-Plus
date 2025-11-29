@@ -1,0 +1,816 @@
+﻿character_is_witchcraft = {
+    trigger_if = {
+        limit = {
+            has_mod_loaded = {VAR = witchcraft_protection}
+        }
+    }
+    OR = {
+        any_secret = {
+            secret_type = secret_witch
+        }
+        has_possibly_undefined_trait = { TRAIT = witch }
+        has_possibly_undefined_trait = { TRAIT = source2 }
+        has_possibly_undefined_trait = { TRAIT = yaga }
+        has_possibly_undefined_trait = { TRAIT = witch_hunter }
+        has_possibly_undefined_trait = { TRAIT = witch_hunter2 }
+        has_possibly_undefined_trait = { TRAIT = source }
+        has_possibly_undefined_trait = { TRAIT = archmage }
+        has_possibly_undefined_trait = { TRAIT = true_witch }
+        has_possibly_undefined_trait = { TRAIT = grandmaster_coven }
+        has_possibly_undefined_trait = { TRAIT = necromancer }
+        has_possibly_undefined_trait = { TRAIT = necromancer2 }
+        has_possibly_undefined_trait = { TRAIT = golem }
+        has_possibly_undefined_trait = { TRAIT = cyrographer }
+        has_possibly_undefined_trait = { TRAIT = demon }
+        has_possibly_undefined_trait = { TRAIT = corrupted }
+        has_possibly_undefined_trait = { TRAIT = immortal1 }
+        has_possibly_undefined_trait = { TRAIT = immortal2 }
+    }
+}
+
+character_is_more_congenital_traits = {
+    trigger_if = {
+        limit = {
+            has_mod_loaded = {VAR = more_congenital_traits_protection}
+        }
+    }
+    OR = {
+        has_possibly_undefined_trait = { TRAIT = physique_good_bonus_1 }
+        has_possibly_undefined_trait = { TRAIT = physique_good_bonus_2 }
+        has_possibly_undefined_trait = { TRAIT = physique_good_bonus_3 }
+        has_possibly_undefined_trait = { TRAIT = physique_good_bonus_4 }
+        has_possibly_undefined_trait = { TRAIT = physique_good_bonus_5 }
+        has_possibly_undefined_trait = { TRAIT = beauty_good_bonus_1 }
+        has_possibly_undefined_trait = { TRAIT = beauty_good_bonus_2 }
+        has_possibly_undefined_trait = { TRAIT = beauty_good_bonus_3 }
+        has_possibly_undefined_trait = { TRAIT = beauty_good_bonus_4 }
+        has_possibly_undefined_trait = { TRAIT = beauty_good_bonus_5 }
+        has_possibly_undefined_trait = { TRAIT = intellect_good_bonus_1 }
+        has_possibly_undefined_trait = { TRAIT = intellect_good_bonus_2 }
+        has_possibly_undefined_trait = { TRAIT = intellect_good_bonus_3 }
+        has_possibly_undefined_trait = { TRAIT = intellect_good_bonus_4 }
+        has_possibly_undefined_trait = { TRAIT = intellect_good_bonus_5 }
+    }
+}
+
+character_is_apotheosis = {
+    trigger_if = {
+        limit = {
+            has_mod_loaded = {VAR = apotheosis_protection}
+        }
+    }
+    OR = {
+        has_possibly_undefined_trait = { TRAIT = intellect_bad_1 }
+        has_possibly_undefined_trait = { TRAIT = intellect_bad_2 }
+        has_possibly_undefined_trait = { TRAIT = intellect_bad_3 }
+        has_possibly_undefined_trait = { TRAIT = intellect_bad_4 }
+        has_possibly_undefined_trait = { TRAIT = intellect_bad_5 }
+        has_possibly_undefined_trait = { TRAIT = intellect_good_1 }
+        has_possibly_undefined_trait = { TRAIT = intellect_good_2 }
+        has_possibly_undefined_trait = { TRAIT = intellect_good_3 }
+        has_possibly_undefined_trait = { TRAIT = intellect_good_4 }
+        has_possibly_undefined_trait = { TRAIT = intellect_good_5 }
+        has_possibly_undefined_trait = { TRAIT = intellect_good_6 }
+        has_possibly_undefined_trait = { TRAIT = intellect_good_7 }
+        has_possibly_undefined_trait = { TRAIT = intellect_good_8 }
+        has_possibly_undefined_trait = { TRAIT = intellect_good_9 }
+        has_possibly_undefined_trait = { TRAIT = intellect_good_10 }
+        has_possibly_undefined_trait = { TRAIT = intellect_good_11 }
+        has_possibly_undefined_trait = { TRAIT = intellect_good_12 }
+        has_possibly_undefined_trait = { TRAIT = intellect_good_13 }
+        has_possibly_undefined_trait = { TRAIT = intellect_good_14 }
+        has_possibly_undefined_trait = { TRAIT = intellect_good_15 }
+        has_possibly_undefined_trait = { TRAIT = beauty_bad_1 }
+        has_possibly_undefined_trait = { TRAIT = beauty_bad_2 }
+        has_possibly_undefined_trait = { TRAIT = beauty_bad_3 }
+        has_possibly_undefined_trait = { TRAIT = beauty_bad_4 }
+        has_possibly_undefined_trait = { TRAIT = beauty_bad_5 }
+        has_possibly_undefined_trait = { TRAIT = beauty_good_1 }
+        has_possibly_undefined_trait = { TRAIT = beauty_good_2 }
+        has_possibly_undefined_trait = { TRAIT = beauty_good_3 }
+        has_possibly_undefined_trait = { TRAIT = beauty_good_4 }
+        has_possibly_undefined_trait = { TRAIT = beauty_good_5 }
+        has_possibly_undefined_trait = { TRAIT = beauty_good_6 }
+        has_possibly_undefined_trait = { TRAIT = beauty_good_7 }
+        has_possibly_undefined_trait = { TRAIT = beauty_good_8 }
+        has_possibly_undefined_trait = { TRAIT = beauty_good_9 }
+        has_possibly_undefined_trait = { TRAIT = beauty_good_10 }
+        has_possibly_undefined_trait = { TRAIT = beauty_good_11 }
+        has_possibly_undefined_trait = { TRAIT = beauty_good_12 }
+        has_possibly_undefined_trait = { TRAIT = beauty_good_13 }
+        has_possibly_undefined_trait = { TRAIT = beauty_good_14 }
+        has_possibly_undefined_trait = { TRAIT = beauty_good_15 }
+        has_possibly_undefined_trait = { TRAIT = physique_bad_1 }
+        has_possibly_undefined_trait = { TRAIT = physique_bad_2 }
+        has_possibly_undefined_trait = { TRAIT = physique_bad_3 }
+        has_possibly_undefined_trait = { TRAIT = physique_bad_4 }
+        has_possibly_undefined_trait = { TRAIT = physique_bad_5 }
+        has_possibly_undefined_trait = { TRAIT = physique_good_1 }
+        has_possibly_undefined_trait = { TRAIT = physique_good_2 }
+        has_possibly_undefined_trait = { TRAIT = physique_good_3 }
+        has_possibly_undefined_trait = { TRAIT = physique_good_4 }
+        has_possibly_undefined_trait = { TRAIT = physique_good_5 }
+        has_possibly_undefined_trait = { TRAIT = physique_good_6 }
+        has_possibly_undefined_trait = { TRAIT = physique_good_7 }
+        has_possibly_undefined_trait = { TRAIT = physique_good_8 }
+        has_possibly_undefined_trait = { TRAIT = physique_good_9 }
+        has_possibly_undefined_trait = { TRAIT = physique_good_10 }
+        has_possibly_undefined_trait = { TRAIT = physique_good_11 }
+        has_possibly_undefined_trait = { TRAIT = physique_good_12 }
+        has_possibly_undefined_trait = { TRAIT = physique_good_13 }
+        has_possibly_undefined_trait = { TRAIT = physique_good_14 }
+        has_possibly_undefined_trait = { TRAIT = physique_good_15 }
+        has_possibly_undefined_trait = { TRAIT = shrewd }
+        has_possibly_undefined_trait = { TRAIT = strong }
+    }
+}
+
+# character_is_agot = {
+#     trigger_if = {
+#         limit = {
+#             has_mod_loaded = {VAR = agot_protection}
+#         }
+#     }
+#     OR = {
+#         has_possibly_undefined_trait = { TRAIT = dragon }
+#         has_possibly_undefined_trait = { TRAIT = dragonrider }
+#         has_possibly_undefined_trait = { TRAIT = dragonless_dragonrider }
+#         has_possibly_undefined_trait = { TRAIT = dragonwidowed }
+#         has_possibly_undefined_trait = { TRAIT = dragonslayer }
+#     }
+# }
+
+character_is_pantheon_of_the_gods = {
+    trigger_if = {
+        limit = {
+            has_mod_loaded = {VAR = pantheon_of_the_gods_protection}
+        }
+    }
+    OR = {
+        has_possibly_undefined_trait = { TRAIT = POG_fallen_deity }
+        has_possibly_undefined_trait = { TRAIT = POG_young_fallen_deity }
+        has_possibly_undefined_trait = { TRAIT = POG_young_pure_deity }
+        has_possibly_undefined_trait = { TRAIT = POG_elder_fallen_deity }
+        has_possibly_undefined_trait = { TRAIT = POG_elder_pure_deity }
+        has_possibly_undefined_trait = { TRAIT = POG_disciple_fallen }
+        has_possibly_undefined_trait = { TRAIT = POG_disciple_pure }
+        has_possibly_undefined_trait = { TRAIT = POG_undying }
+        has_possibly_undefined_trait = { TRAIT = POG_proficient_undying }
+        has_possibly_undefined_trait = { TRAIT = POG_ascended_undying }
+        has_possibly_undefined_trait = { TRAIT = POG_blood_of_gods }
+        has_possibly_undefined_trait = { TRAIT = POG_aspiring_hero }
+        has_possibly_undefined_trait = { TRAIT = POG_mythic_hero }
+        has_possibly_undefined_trait = { TRAIT = POG_demi_deity }
+        has_possibly_undefined_trait = { TRAIT = POG_ascending_demi_deity }
+        has_possibly_undefined_trait = { TRAIT = POG_minor_deity }
+        has_possibly_undefined_trait = { TRAIT = POG_mortal_demi_deity }
+        has_possibly_undefined_trait = { TRAIT = POG_champion_of_mortality }
+        has_possibly_undefined_trait = { TRAIT = POG_pure_deity }
+        has_possibly_undefined_trait = { TRAIT = POG_castitasadvanced }
+        has_possibly_undefined_trait = { TRAIT = POG_caritasadvanced }
+        has_possibly_undefined_trait = { TRAIT = POG_diligentiaadvanced }
+        has_possibly_undefined_trait = { TRAIT = POG_temperantiaadvanced }
+        has_possibly_undefined_trait = { TRAIT = POG_humanitasadvanced }
+        has_possibly_undefined_trait = { TRAIT = POG_patientiaadvanced }
+        has_possibly_undefined_trait = { TRAIT = POG_humilitasadvanced }
+        has_possibly_undefined_trait = { TRAIT = POG_luxuriaadvanced }
+        has_possibly_undefined_trait = { TRAIT = POG_avaritiaadvanced }
+        has_possibly_undefined_trait = { TRAIT = POG_acediaadvanced }
+        has_possibly_undefined_trait = { TRAIT = POG_gulaadvanced }
+        has_possibly_undefined_trait = { TRAIT = POG_invidiaadvanced }
+        has_possibly_undefined_trait = { TRAIT = POG_iraadvanced }
+        has_possibly_undefined_trait = { TRAIT = POG_superbiaadvanced }
+    }
+}
+
+character_is_highlander_expanded = {
+    trigger_if = {
+        limit = {
+            has_mod_loaded = {VAR = highlander_expanded_protection}
+        }
+    }
+    OR = {
+        has_possibly_undefined_trait = { TRAIT = hi_immortal_1 }
+        has_possibly_undefined_trait = { TRAIT = hi_immortal_2 }
+        has_possibly_undefined_trait = { TRAIT = hi_immortal_3 }
+        has_possibly_undefined_trait = { TRAIT = hi_immortal_4 }
+        has_possibly_undefined_trait = { TRAIT = hi_immortal_5 }
+        has_possibly_undefined_trait = { TRAIT = hi_immortal_6 }
+        has_possibly_undefined_trait = { TRAIT = hi_immortal_7 }
+        has_possibly_undefined_trait = { TRAIT = hi_immortal_8 }
+        has_possibly_undefined_trait = { TRAIT = hi_immortal_9 }
+        has_possibly_undefined_trait = { TRAIT = hi_immortal_10 }
+        has_possibly_undefined_trait = { TRAIT = hi_immortal_11 }
+        has_possibly_undefined_trait = { TRAIT = hi_immortal_12 }
+        has_possibly_undefined_trait = { TRAIT = mortal }
+        has_possibly_undefined_trait = { TRAIT = giant }
+    }
+}
+
+
+character_is_highlander_normal = {
+    trigger_if = {
+        limit = {
+            has_mod_loaded = {VAR = highlander_normal_protection}
+        }
+    }
+    OR = {
+        has_possibly_undefined_trait = { TRAIT = hi_immortal_1 }
+        has_possibly_undefined_trait = { TRAIT = hi_immortal_2 }
+        has_possibly_undefined_trait = { TRAIT = hi_immortal_3 }
+        has_possibly_undefined_trait = { TRAIT = hi_immortal_4 }
+        has_possibly_undefined_trait = { TRAIT = hi_immortal_5 }
+        has_possibly_undefined_trait = { TRAIT = hi_immortal_6 }
+        has_possibly_undefined_trait = { TRAIT = hi_immortal_7 }
+        has_possibly_undefined_trait = { TRAIT = hi_immortal_8 }
+        has_possibly_undefined_trait = { TRAIT = hi_immortal_9 }
+        has_possibly_undefined_trait = { TRAIT = hi_immortal_10 }
+        has_possibly_undefined_trait = { TRAIT = hi_immortal_11 }
+        has_possibly_undefined_trait = { TRAIT = hi_immortal_12 }
+    }
+}
+
+character_is_dense_muscles = {
+    trigger_if = {
+        limit = {
+            has_mod_loaded = {VAR = dense_muscles_protection}
+        }
+    }
+    OR = {
+        has_possibly_undefined_trait = { TRAIT = muscledensity_good_1 }
+        has_possibly_undefined_trait = { TRAIT = muscledensity_good_2 }
+        has_possibly_undefined_trait = { TRAIT = muscledensity_good_3 }
+        has_possibly_undefined_trait = { TRAIT = muscledensity_bad_1 }
+        has_possibly_undefined_trait = { TRAIT = muscledensity_bad_2 }
+        has_possibly_undefined_trait = { TRAIT = muscledensity_bad_3 }
+    }
+}
+
+
+character_is_become_hero = {
+    trigger_if = {
+        limit = {
+            has_mod_loaded = {VAR = become_hero_protection}
+        }
+    }
+    OR = {
+        has_possibly_undefined_trait = { TRAIT = demigod }
+        has_possibly_undefined_trait = { TRAIT = hero }
+    }
+}
+
+character_is_sapphos_daughter = {
+    trigger_if = {
+        limit = {
+            has_mod_loaded = {VAR = sapphos_daughter_2_protection}
+        }
+    }
+    OR = {
+        has_possibly_undefined_trait = { TRAIT = blood_lilith_secret }
+        has_possibly_undefined_trait = { TRAIT = blood_lilith }
+        has_possibly_undefined_trait = { TRAIT = soulless }
+        has_possibly_undefined_trait = { TRAIT = witch }
+        has_possibly_undefined_trait = { TRAIT = witch_0 }
+        has_possibly_undefined_trait = { TRAIT = blood_asmodeus }
+        has_possibly_undefined_trait = { TRAIT = blood_beelzebub }
+        has_possibly_undefined_trait = { TRAIT = blood_leviathan }
+        has_possibly_undefined_trait = { TRAIT = blood_belphegor }
+        has_possibly_undefined_trait = { TRAIT = blood_mammon }
+        has_possibly_undefined_trait = { TRAIT = blood_lucifer }
+        has_possibly_undefined_trait = { TRAIT = blood_lilith_purified }
+        has_possibly_undefined_trait = { TRAIT = blood_lilith_purified_ai }
+        has_possibly_undefined_trait = { TRAIT = lesser_demon }
+        has_possibly_undefined_trait = { TRAIT = possessed_special }
+        has_possibly_undefined_trait = { TRAIT = demonologist }
+        has_possibly_undefined_trait = { TRAIT = mistress_of_magic }
+        has_possibly_undefined_trait = { TRAIT = blood_adam }
+        has_possibly_undefined_trait = { TRAIT = blood_eve }
+        has_possibly_undefined_trait = { TRAIT = in_hell }
+        has_possibly_undefined_trait = { TRAIT = blood_gluttony }
+        has_possibly_undefined_trait = { TRAIT = blood_envy }
+        has_possibly_undefined_trait = { TRAIT = blood_sloth }
+        has_possibly_undefined_trait = { TRAIT = blood_greed }
+        has_possibly_undefined_trait = { TRAIT = blood_pride }
+    }
+}
+
+character_is_immortals_revised = {
+    trigger_if = {
+        limit = {
+            has_mod_loaded = {VAR = immortals_revised_protection}
+        }
+    }
+    OR = {
+        has_possibly_undefined_trait = { TRAIT = ageless }
+        has_possibly_undefined_trait = { TRAIT = immortal }
+        has_possibly_undefined_trait = { TRAIT = immortality_genetic }
+        has_possibly_undefined_trait = { TRAIT = immortality_sterile }
+        has_possibly_undefined_trait = { TRAIT = immortality }
+    }
+}
+
+character_is_the_beast = {
+    trigger_if = {
+        limit = {
+            has_mod_loaded = {VAR = the_beast_protection}
+        }
+    }
+    OR = {
+        has_possibly_undefined_trait = { TRAIT = the_beast_wolf }
+        has_possibly_undefined_trait = { TRAIT = the_beast_bear }
+        has_possibly_undefined_trait = { TRAIT = the_beast_dragon }
+        has_possibly_undefined_trait = { TRAIT = the_beast_3 }
+        has_possibly_undefined_trait = { TRAIT = the_beast_2 }
+        has_possibly_undefined_trait = { TRAIT = the_beast_1 }
+    }
+}
+
+character_is_dragonhearted = {
+    trigger_if = {
+        limit = {
+            has_mod_loaded = {VAR = age_of_dragons_reborn_protection}
+        }
+    }
+    OR = {
+        has_possibly_undefined_trait = { TRAIT = dragonheart }
+    }
+}
+
+character_is_ary_commander = {
+    trigger_if = {
+        limit = {
+            has_mod_loaded = {VAR = ary_new_commander_protection}
+        }
+    }
+    OR = {
+        has_possibly_undefined_trait = { TRAIT = TheCommander12 }
+        has_possibly_undefined_trait = { TRAIT = TheCommander11 }
+        has_possibly_undefined_trait = { TRAIT = TheCommander10 }
+        has_possibly_undefined_trait = { TRAIT = TheCommander9 }
+        has_possibly_undefined_trait = { TRAIT = TheCommander8 }
+        has_possibly_undefined_trait = { TRAIT = TheCommander7 }
+        has_possibly_undefined_trait = { TRAIT = TheCommander0 }
+        has_possibly_undefined_trait = { TRAIT = TheCommander20 }
+    }
+}
+
+character_is_arcane_legacy_2 = {
+    trigger_if = {
+        limit = {
+            has_mod_loaded = {VAR = arcane_legacy_2_protection}
+        }
+    }
+    OR = {
+        has_possibly_undefined_trait = { TRAIT = mage }
+        has_possibly_undefined_trait = { TRAIT = genetic_perfection }
+        has_possibly_undefined_trait = { TRAIT = al_god }
+        has_possibly_undefined_trait = { TRAIT = al_ancient }
+        has_possibly_undefined_trait = { TRAIT = al_golem }
+        has_possibly_undefined_trait = { TRAIT = al_homunculus }
+        has_possibly_undefined_trait = { TRAIT = al_perfect_human }
+        has_possibly_undefined_trait = { TRAIT = arcana_lifestyle_godly_arcane_studies }
+        has_possibly_undefined_trait = { TRAIT = arcana_lifestyle_godly_spell }
+        has_possibly_undefined_trait = { TRAIT = arcana_lifestyle_godly_ritua }
+        has_possibly_undefined_trait = { TRAIT = arcana_lifestyle_godly_rewrite_spell }
+        has_possibly_undefined_trait = { TRAIT = arcana_lifestyle_reperk }
+    }
+}
+
+character_is_arcane_legacy_3 = {
+    trigger_if = {
+        limit = {
+            has_mod_loaded = {VAR = arcane_legacy_3_protection}
+        }
+    }
+    OR = {
+        has_possibly_undefined_trait = { TRAIT = ALT_discovered_mage }
+        has_possibly_undefined_trait = { TRAIT = ALT_golem }
+        has_character_flag = ALT_know_materomancy
+        has_character_flag = ALT_know_biomancy
+    }
+}
+
+character_is_inheritable_traits_plus = {
+    trigger_if = {
+        limit = {
+            has_mod_loaded = {VAR = inheritable_traits_plus_protection}
+        }
+    }
+    OR = {
+        has_possibly_undefined_trait = { TRAIT = giant }
+        has_possibly_undefined_trait = { TRAIT = albino }
+        has_possibly_undefined_trait = { TRAIT = shrewd }
+        has_possibly_undefined_trait = { TRAIT = strong }
+        has_possibly_undefined_trait = { TRAIT = fecund }
+        has_possibly_undefined_trait = { TRAIT = pure_blooded }
+        has_possibly_undefined_trait = { TRAIT = physique_good_4 }
+        has_possibly_undefined_trait = { TRAIT = physique_good_5 }
+        has_possibly_undefined_trait = { TRAIT = intellect_good_4 }
+        has_possibly_undefined_trait = { TRAIT = intellect_good_5 }
+        has_possibly_undefined_trait = { TRAIT = beauty_good_4 }
+        has_possibly_undefined_trait = { TRAIT = beauty_good_5 }
+    }
+}
+
+character_is_petty_inheritable = {
+    trigger_if = {
+        limit = {
+            has_mod_loaded = {VAR = petty_inheritable_protection}
+        }
+    }
+    OR = {
+        has_possibly_undefined_trait = { TRAIT = silver_tongued }
+        has_possibly_undefined_trait = { TRAIT = glowing }
+        has_possibly_undefined_trait = { TRAIT = surefooted }
+        has_possibly_undefined_trait = { TRAIT = regal_bearing }
+        has_possibly_undefined_trait = { TRAIT = pt_balanced_humors }
+        has_possibly_undefined_trait = { TRAIT = hardy_lung }
+        has_possibly_undefined_trait = { TRAIT = hawkeyed }
+        has_possibly_undefined_trait = { TRAIT = nearsighted }
+        has_possibly_undefined_trait = { TRAIT = keen_eared }
+        has_possibly_undefined_trait = { TRAIT = deaf }
+        has_possibly_undefined_trait = { TRAIT = dyslexic }
+        has_possibly_undefined_trait = { TRAIT = hyperlexic }
+        has_possibly_undefined_trait = { TRAIT = dyscalculic }
+        has_possibly_undefined_trait = { TRAIT = hypercalculic }
+        has_possibly_undefined_trait = { TRAIT = permanent_scowl }
+        has_possibly_undefined_trait = { TRAIT = friendly_face }
+        has_possibly_undefined_trait = { TRAIT = memory_good }
+        has_possibly_undefined_trait = { TRAIT = memory_bad }
+        has_possibly_undefined_trait = { TRAIT = bleeder }
+        has_possibly_undefined_trait = { TRAIT = wheezing }
+        has_possibly_undefined_trait = { TRAIT = scaly }
+        has_possibly_undefined_trait = { TRAIT = stuttering }
+        has_possibly_undefined_trait = { TRAIT = lisping }
+        has_possibly_undefined_trait = { TRAIT = hunchbacked }
+        has_possibly_undefined_trait = { TRAIT = clubfooted }
+    }
+}
+
+character_is_pure_blooded_expanded = {
+    trigger_if = {
+        limit = {
+            has_mod_loaded = {VAR = pure_blooded_expanded_protection}
+        }
+    }
+    OR = {
+        has_possibly_undefined_trait = { TRAIT = impure_blooded }
+        has_possibly_undefined_trait = { TRAIT = pure_blooded }
+        has_possibly_undefined_trait = { TRAIT = pure_blooded_2 }
+        has_possibly_undefined_trait = { TRAIT = pure_blooded_3 }
+        has_possibly_undefined_trait = { TRAIT = pure_blooded_4 }
+    }
+}
+
+character_is_vampirism_lycanthropy = {
+    trigger_if = {
+        limit = {
+            has_mod_loaded = { VAR = vampirism_lycanthropy_protection }
+        }
+    }
+    OR = {
+        has_possibly_undefined_trait = { TRAIT = val_vampire }
+        has_possibly_undefined_trait = { TRAIT = val_known_vampire }
+        has_possibly_undefined_trait = { TRAIT = val_lycan }
+        has_possibly_undefined_trait = { TRAIT = val_known_lycan }
+        has_possibly_undefined_trait = { TRAIT = val_hybrid }
+        has_possibly_undefined_trait = { TRAIT = val_known_hybrid }
+        has_possibly_undefined_trait = { TRAIT = val_slayer }
+        has_possibly_undefined_trait = { TRAIT = val_known_slayer }
+    }
+}
+
+character_is_supernatural = {
+    AND = {
+        has_mod_loaded = {VAR = supernatural_protection}
+        OR = {
+            has_possibly_undefined_trait = { TRAIT = source }
+            has_possibly_undefined_trait = { TRAIT = source2 }
+            has_possibly_undefined_trait = { TRAIT = source3 }
+            has_possibly_undefined_trait = { TRAIT = source4 }
+            has_possibly_undefined_trait = { TRAIT = demon }
+            has_possibly_undefined_trait = { TRAIT = true_witch }
+            has_possibly_undefined_trait = { TRAIT = yaga }
+            has_possibly_undefined_trait = { TRAIT = corrupted }
+            has_possibly_undefined_trait = { TRAIT = archmage }
+            has_possibly_undefined_trait = { TRAIT = witch_hunter }
+            has_possibly_undefined_trait = { TRAIT = grandmaster_coven }
+            has_possibly_undefined_trait = { TRAIT = lifestyle_mystic }
+            has_possibly_undefined_trait = { TRAIT = scholar }
+            has_possibly_undefined_trait = { TRAIT = witch }
+            has_possibly_undefined_trait = { TRAIT = necromancer }
+            has_possibly_undefined_trait = { TRAIT = warlock }
+            has_possibly_undefined_trait = { TRAIT = golem }
+            has_possibly_undefined_trait = { TRAIT = heresiarch }
+            has_possibly_undefined_trait = { TRAIT = cyrographer }
+            has_possibly_undefined_trait = { TRAIT = supernatural_vampire }
+            has_possibly_undefined_trait = { TRAIT = spn_known_vampire }
+            has_possibly_undefined_trait = { TRAIT = supernatural_werewolf }
+            has_possibly_undefined_trait = { TRAIT = spn_known_werewolf }
+            has_possibly_undefined_trait = { TRAIT = supernatural_hybrid }
+            has_possibly_undefined_trait = { TRAIT = spn_known_hybrid }
+            has_possibly_undefined_trait = { TRAIT = supernatural_hunter }
+            has_possibly_undefined_trait = { TRAIT = spn_known_hunter }
+            has_possibly_undefined_trait = { TRAIT = alchemist }
+            has_possibly_undefined_trait = { TRAIT = immortal }
+        }
+    }
+}
+
+character_is_positive_congenital = {
+    trigger_if = {
+        limit = {
+            has_mod_loaded = { VAR = positive_congenital_protection }
+        }
+    }
+    OR = {
+        has_possibly_undefined_trait = { TRAIT = beauty_good_1 }
+        has_possibly_undefined_trait = { TRAIT = beauty_good_2 }
+        has_possibly_undefined_trait = { TRAIT = beauty_good_3 }
+        has_possibly_undefined_trait = { TRAIT = physique_good_1 }
+        has_possibly_undefined_trait = { TRAIT = physique_good_2 }
+        has_possibly_undefined_trait = { TRAIT = physique_good_3 }
+        has_possibly_undefined_trait = { TRAIT = intellect_good_1 }
+        has_possibly_undefined_trait = { TRAIT = intellect_good_2 }
+        has_possibly_undefined_trait = { TRAIT = intellect_good_3 }
+    }
+}
+
+character_is_negative_congenital = {
+    trigger_if = {
+        limit = {
+            has_mod_loaded = { VAR = negative_congenital_protection }
+        }
+    }
+    OR = {
+        has_possibly_undefined_trait = { TRAIT = beauty_bad_1 }
+        has_possibly_undefined_trait = { TRAIT = beauty_bad_2 }
+        has_possibly_undefined_trait = { TRAIT = beauty_bad_3 }
+        has_possibly_undefined_trait = { TRAIT = intellect_bad_1 }
+        has_possibly_undefined_trait = { TRAIT = intellect_bad_2 }
+        has_possibly_undefined_trait = { TRAIT = intellect_bad_3 }
+        has_possibly_undefined_trait = { TRAIT = physique_bad_1 }
+        has_possibly_undefined_trait = { TRAIT = physique_bad_2 }
+        has_possibly_undefined_trait = { TRAIT = physique_bad_3 }
+    }
+}
+
+character_is_special_congenital = {
+    trigger_if = {
+        limit = {
+            has_mod_loaded = { VAR = special_congenital_protection }
+        }
+    }
+    OR = {
+        has_possibly_undefined_trait = { TRAIT = pure_blooded }
+        has_possibly_undefined_trait = { TRAIT = fecund }
+        has_possibly_undefined_trait = { TRAIT = shrewd }
+        has_possibly_undefined_trait = { TRAIT = strong }
+        has_possibly_undefined_trait = { TRAIT = giant }
+        has_possibly_undefined_trait = { TRAIT = albino }
+        has_possibly_undefined_trait = { TRAIT = dull }
+        has_possibly_undefined_trait = { TRAIT = weak }
+        has_possibly_undefined_trait = { TRAIT = sterile }
+        has_possibly_undefined_trait = { TRAIT = clubfooted }
+        has_possibly_undefined_trait = { TRAIT = scaly }
+        has_possibly_undefined_trait = { TRAIT = hunchbacked }
+        has_possibly_undefined_trait = { TRAIT = lisping }
+        has_possibly_undefined_trait = { TRAIT = stuttering }
+        has_possibly_undefined_trait = { TRAIT = wheezing }
+        has_possibly_undefined_trait = { TRAIT = dwarf }
+        has_possibly_undefined_trait = { TRAIT = inbred }
+        has_possibly_undefined_trait = { TRAIT = impotent }
+        has_possibly_undefined_trait = { TRAIT = spindly }
+        has_possibly_undefined_trait = { TRAIT = bleeder }
+        has_possibly_undefined_trait = { TRAIT = lunatic_1 }
+        has_possibly_undefined_trait = { TRAIT = lunatic_genetic }
+        has_possibly_undefined_trait = { TRAIT = depressed_1 }
+        has_possibly_undefined_trait = { TRAIT = depressed_genetic }
+        has_possibly_undefined_trait = { TRAIT = possessed_1 }
+        has_possibly_undefined_trait = { TRAIT = possessed_genetic }
+    }
+}
+
+character_is_old_valyria_lite = {
+    trigger_if = {
+        limit = {
+            has_mod_loaded = { VAR = old_valyria_lite_protection }
+        }
+    }
+    OR = {
+        has_possibly_undefined_trait = { TRAIT = purple_eyes }
+        has_possibly_undefined_trait = { TRAIT = silver_hair }
+        has_possibly_undefined_trait = { TRAIT = b_blood }
+        has_possibly_undefined_trait = { TRAIT = val_blood_3 }
+        has_possibly_undefined_trait = { TRAIT = val_blood_2 }
+        has_possibly_undefined_trait = { TRAIT = val_blood_1 }
+    }
+}
+
+character_is_save_education_5 = {
+    trigger_if = {
+        limit = {
+            has_mod_loaded = { VAR = education_5_protection }
+        }
+    }
+    OR = {
+        has_possibly_undefined_trait = { TRAIT = education_stewardship_5 }
+        has_possibly_undefined_trait = { TRAIT = education_intrigue_5 }
+        has_possibly_undefined_trait = { TRAIT = education_prowess_martial_4 }
+        has_possibly_undefined_trait = { TRAIT = education_learning_5 }
+        has_possibly_undefined_trait = { TRAIT = education_martial_5 }
+        has_possibly_undefined_trait = { TRAIT = education_republican_knowledge_5 }
+        has_possibly_undefined_trait = { TRAIT = education_nht_prowess_5 }
+        has_possibly_undefined_trait = { TRAIT = education_nht_leadership_5 }
+        has_possibly_undefined_trait = { TRAIT = education_diplomacy_5 }
+    }
+}
+
+character_is_elf_destiny = {
+    trigger_if = {
+        limit = {
+            has_mod_loaded = { VAR = elf_destiny_protection }
+        }
+    }
+    OR = {
+        has_possibly_undefined_trait = { TRAIT = aeluran_servant }
+        has_possibly_undefined_trait = { TRAIT = aeluran_sister }
+        has_possibly_undefined_trait = { TRAIT = aeluran_matron }
+        has_possibly_undefined_trait = { TRAIT = aeluran_high_matriarch }
+        has_possibly_undefined_trait = { TRAIT = born_in_the_red }
+        has_possibly_undefined_trait = { TRAIT = stone_automaton }
+        has_possibly_undefined_trait = { TRAIT = spiritual_projection }
+        has_possibly_undefined_trait = { TRAIT = marble_automaton }
+        has_possibly_undefined_trait = { TRAIT = royal_elf_valerith }
+        has_possibly_undefined_trait = { TRAIT = royal_elf_serelion }
+        has_possibly_undefined_trait = { TRAIT = royal_elf_gwynthorn }
+        has_possibly_undefined_trait = { TRAIT = royal_elf_thundarael }
+        has_possibly_undefined_trait = { TRAIT = royal_elf_daelurin }
+        has_possibly_undefined_trait = { TRAIT = magic_talent_1 }
+        has_possibly_undefined_trait = { TRAIT = magic_talent_2 }
+        has_possibly_undefined_trait = { TRAIT = magic_talent_3 }
+        has_possibly_undefined_trait = { TRAIT = endless_lord }
+        has_possibly_undefined_trait = { TRAIT = enchantress }
+        has_possibly_undefined_trait = { TRAIT = magi }
+        has_possibly_undefined_trait = { TRAIT = heroic }
+        has_possibly_undefined_trait = { TRAIT = passionate }
+        has_possibly_undefined_trait = { TRAIT = heroic_valar }
+        has_possibly_undefined_trait = { TRAIT = passionate_valar }
+        has_possibly_undefined_trait = { TRAIT = entranced }
+        has_possibly_undefined_trait = { TRAIT = enthralled }
+        has_possibly_undefined_trait = { TRAIT = elven_mortality }
+        has_possibly_undefined_trait = { TRAIT = elven_immortality }
+        has_possibly_undefined_trait = { TRAIT = adventurer }
+        has_possibly_undefined_trait = { TRAIT = twin }
+        has_possibly_undefined_trait = { TRAIT = purest_blooded }
+        has_possibly_undefined_trait = { TRAIT = purer_blooded }
+        has_possibly_undefined_trait = { TRAIT = shrewd_2 }
+        has_possibly_undefined_trait = { TRAIT = physique_good_1 }
+        has_possibly_undefined_trait = { TRAIT = physique_good_2 }
+        has_possibly_undefined_trait = { TRAIT = physique_good_3 }
+        has_possibly_undefined_trait = { TRAIT = physique_good_4 }
+        has_possibly_undefined_trait = { TRAIT = intellect_good_1 }
+        has_possibly_undefined_trait = { TRAIT = intellect_good_2 }
+        has_possibly_undefined_trait = { TRAIT = intellect_good_3 }
+        has_possibly_undefined_trait = { TRAIT = intellect_good_4 }
+        has_possibly_undefined_trait = { TRAIT = beauty_good_1 }
+        has_possibly_undefined_trait = { TRAIT = beauty_good_2 }
+        has_possibly_undefined_trait = { TRAIT = beauty_good_3 }
+        has_possibly_undefined_trait = { TRAIT = beauty_good_4 }
+        has_possibly_undefined_trait = { TRAIT = unconventional_beauty_good_1 }
+        has_possibly_undefined_trait = { TRAIT = unconventional_beauty_good_2 }
+        has_possibly_undefined_trait = { TRAIT = unconventional_beauty_good_3 }
+        has_possibly_undefined_trait = { TRAIT = exotic_beauty_good_1 }
+        has_possibly_undefined_trait = { TRAIT = exotic_beauty_good_2 }
+        has_possibly_undefined_trait = { TRAIT = exotic_beauty_good_3 }
+    }
+}
+
+character_is_elf_superiority_submod = {
+    trigger_if = {
+        limit = {
+            has_mod_loaded = { VAR = elf_superiority_submod_protection }
+        }
+    }
+    OR = {
+        any_secret = {
+            secret_type = secret_human_lover
+        }
+        has_possibly_undefined_trait = { TRAIT = human_lover }
+    }
+}
+
+character_is_elf_lotr_submod = {
+    trigger_if = {
+        limit = {
+            has_mod_loaded = { VAR = elf_lotr_submod_protection }
+        }
+    }
+    OR = {
+        has_possibly_undefined_trait = { TRAIT = cirdan_house }
+        has_possibly_undefined_trait = { TRAIT = earendil_house }
+        has_possibly_undefined_trait = { TRAIT = elrond_house }
+        has_possibly_undefined_trait = { TRAIT = elwe_house }
+        has_possibly_undefined_trait = { TRAIT = feanor_house }
+        has_possibly_undefined_trait = { TRAIT = finwe_house }
+        has_possibly_undefined_trait = { TRAIT = galadriel_house }
+        has_possibly_undefined_trait = { TRAIT = noldor_house }
+        has_possibly_undefined_trait = { TRAIT = glorfindel_house }
+        has_possibly_undefined_trait = { TRAIT = hurin_house }
+        has_possibly_undefined_trait = { TRAIT = idril_house }
+        has_possibly_undefined_trait = { TRAIT = luthien_house }
+    }
+}
+
+character_is_elf_atlantis_submod = {
+    trigger_if = {
+        limit = {
+            has_mod_loaded = { VAR = elf_atlantis_submod_protection }
+        }
+    }
+    OR = {
+        has_possibly_undefined_trait = { TRAIT = uninhabited }
+        has_possibly_undefined_trait = { TRAIT = atlantis_augustus }
+        has_possibly_undefined_trait = { TRAIT = royal_elf_lormelis }
+    }
+}
+
+character_is_rice = {
+    trigger_if = {
+        limit = {
+            has_mod_loaded = { VAR = rice_protection }
+        }
+    }
+    OR = {
+        has_possibly_undefined_trait = { TRAIT = RICE_hafsa }
+        has_possibly_undefined_trait = { TRAIT = RICE_hafsa_full_rage }
+        has_possibly_undefined_trait = { TRAIT = RICE_hafsa_full_recovery }
+        has_possibly_undefined_trait = { TRAIT = RICE_the_nabataean }
+        has_possibly_undefined_trait = { TRAIT = RICE_ooni_of_ife }
+        has_possibly_undefined_trait = { TRAIT = RICE_explorer }
+        has_possibly_undefined_trait = { TRAIT = RICE_exploring_western_seas }
+        has_possibly_undefined_trait = { TRAIT = RICE_hephthalite_emperor_khan }
+        has_possibly_undefined_trait = { TRAIT = RICE_hephthalite_emperor_shah }
+        has_possibly_undefined_trait = { TRAIT = RICE_sicilian_ruler }
+        has_possibly_undefined_trait = { TRAIT = RICE_cattle_owner_1 }
+        has_possibly_undefined_trait = { TRAIT = RICE_cattle_owner_2 }
+        has_possibly_undefined_trait = { TRAIT = RICE_cattle_owner_spouse }
+        has_possibly_undefined_trait = { TRAIT = RICE_mahavihara_trait }
+        has_possibly_undefined_trait = { TRAIT = RICE_abhayagiri_trait }
+        has_possibly_undefined_trait = { TRAIT = RICE_jetavana_trait }
+        has_possibly_undefined_trait = { TRAIT = RICE_indian_ocean_merchant }
+        has_possibly_undefined_trait = { TRAIT = RICE_silk_road_merchant }
+        has_possibly_undefined_trait = { TRAIT = RICE_trans_saharan_merchant }
+    }
+}
+
+character_is_the_road_of_god = {
+    trigger_if = {
+        limit = {
+            has_mod_loaded = { VAR = the_road_of_god_protection }
+        }
+    }
+    OR = {
+        has_possibly_undefined_trait = { TRAIT = super_war_god }
+        has_possibly_undefined_trait = { TRAIT = super_dark_god }
+        has_possibly_undefined_trait = { TRAIT = super_wisdom_god }
+        has_possibly_undefined_trait = { TRAIT = super_nature_god }
+        has_possibly_undefined_trait = { TRAIT = super_belief_god }
+        has_possibly_undefined_trait = { TRAIT = super_sea_god }
+        has_possibly_undefined_trait = { TRAIT = super_destiny_god }
+        has_possibly_undefined_trait = { TRAIT = super_time_god }
+        has_possibly_undefined_trait = { TRAIT = super_sun_god }
+        has_possibly_undefined_trait = { TRAIT = super_highlander_god }
+        has_possibly_undefined_trait = { TRAIT = super_fight_god }
+        has_possibly_undefined_trait = { TRAIT = super_ark_god }
+        has_possibly_undefined_trait = { TRAIT = great_blood_traits }
+        has_possibly_undefined_trait = { TRAIT = know_all_thing_traits }
+        has_possibly_undefined_trait = { TRAIT = angel_traits }
+        has_possibly_undefined_trait = { TRAIT = the_gift_of_god }
+        has_possibly_undefined_trait = { TRAIT = saint_in_flesh_traits }
+        has_possibly_undefined_trait = { TRAIT = a_patriarch }
+        has_possibly_undefined_trait = { TRAIT = beloved_perk_trait }
+        has_possibly_undefined_trait = { TRAIT = devilishness }
+        has_possibly_undefined_trait = { TRAIT = god_god }
+        has_possibly_undefined_trait = { TRAIT = rift_organisms }
+        has_possibly_undefined_trait = { TRAIT = apostle_of_evil }
+        has_possibly_undefined_trait = { TRAIT = apostle_of_destiny }
+        has_possibly_undefined_trait = { TRAIT = apostle_of_time }
+        has_possibly_undefined_trait = { TRAIT = apostle_of_hope }
+        has_possibly_undefined_trait = { TRAIT = the_legendary_trait }
+        has_possibly_undefined_trait = { TRAIT = super_black_fire_believer }
+    }
+}
+
+character_is_lifespan_traits = {
+    trigger_if = {
+        limit = {
+            has_mod_loaded = { VAR = lifespan_traits_protection }
+        }
+    }
+    OR = {
+        has_possibly_undefined_trait = { TRAIT = fleeting }
+        has_possibly_undefined_trait = { TRAIT = enduring }
+        has_possibly_undefined_trait = { TRAIT = venerable }
+    }
+}

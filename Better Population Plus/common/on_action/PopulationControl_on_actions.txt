@@ -1,0 +1,14 @@
+﻿# Called every Jan 1st
+# Root does not exist
+
+on_game_start = {
+    on_actions = {
+        set_all_variables
+    }
+}
+
+set_all_variables = {
+    effect = {
+        check_all_mod_global_vars = yes
+    }
+}

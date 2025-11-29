@@ -1,0 +1,609 @@
+﻿bpc_enable_population_control = {
+	exists = global_var:enable_population_control
+	any_living_character = {
+		count >= global_var:global_population_target
+	}
+}
+dynasty_protection_target = {
+	is_visibly_fertile = yes
+	trigger_if = {
+		limit = {
+			is_married = yes
+		}
+		trigger_if = {
+			limit = {
+				is_female = yes
+			}
+			matrilinear_marriage = yes
+		}
+		trigger_else = {
+			matrilinear_marriage = no
+		}
+	}
+	fertility > 0
+	health >= define:NOldAge|DIE_HEALTH_TRESHOLD
+	is_concubine = no
+}
+historical_character_trigger = {
+	OR = {
+		has_trait = historical_character
+		has_character_flag = special_laamp_char
+		has_character_flag = immune_to_disease
+		has_variable = historical_character
+		trigger_if = {
+			limit = {
+				exists = global_var:hmi_immersion_pack_loaded
+			}
+			hm_historical_character_trigger = yes
+		}
+	}
+}
+
+# sort in optimized order
+bpc_death_trigger = {
+	is_councillor = no
+
+	# it's rare.. but common in some special mods
+	trigger_if = {
+		limit = {
+			is_immortal = yes
+		}
+		hunjian_fake_immortal = yes
+	}
+
+	# there are many anime characters if any anime mod loaded
+	trigger_if = {
+		limit = {
+			exists = global_var:waifu_protection
+		}
+		waifu_portrait_trigger = no
+	}
+	trigger_if = {
+		limit = {
+			is_ruler = yes
+		}
+		OR = {
+			trigger_if = {
+				limit = {
+					is_landless_adventurer = yes
+				}
+				NOT = { exists = global_var:adventurer_protection }
+			}
+			trigger_if = {
+				limit = {
+					primary_title = {
+						is_noble_family_title = yes
+					}
+				}
+				NOT = { exists = global_var:noble_family_protection }
+			}
+			trigger_if = {
+				limit = {
+					primary_title = {
+						is_nomad_title = yes
+					}
+				}
+				NOT = { exists = global_var:nomad_protection }
+			}
+			always = no
+		}
+	}
+	trigger_else = {
+		trigger_if = {
+			limit = {
+				global_var:ruler_protection_tier != 0
+			}
+			NOR = {
+				any_close_family_member = {
+					highest_held_title_tier >= global_var:ruler_protection_tier
+				}
+				any_consort = {
+					highest_held_title_tier >= global_var:ruler_protection_tier
+				}
+			}
+		}
+	}
+	trigger_if = {
+		limit = {
+			global_var:heir_protection_count != 0
+		}
+		NOT = {
+			any_heir_title = {
+				tier >= global_var:ruler_protection_tier
+				prev = {
+					place_in_line_of_succession = {
+						target = prev
+						value <= global_var:heir_protection_count
+					}
+				}
+			}
+		}
+	}
+	trigger_if = {
+		limit = {
+			exists = dynasty
+			dynasty.dynasty_protection_value > 0
+		}
+		NAND = {
+			dynasty_protection_target = yes
+			dynasty = {
+				any_dynasty_member = {
+					dynasty_protection_target = yes
+					count <= dynasty.dynasty_protection_value
+				}
+			}
+		}
+	}
+	trigger_if = {
+		limit = {
+			any_player = {
+				count > 0
+			}
+		}
+		trigger_if = {
+			limit = {
+				global_var:player_family_protection_level > 0
+			}
+			NOR = {
+				any_close_family_member = {
+					is_ai = no
+				}
+				any_consort = {
+					is_ai = no
+				}
+			}
+			trigger_if = {
+				limit = {
+					global_var:player_family_protection_level = 2
+				}
+				NOT = {
+					any_extended_family_member = {
+						is_ai = no
+					}
+				}
+			}
+		}
+		trigger_if = {
+			limit = {
+				global_var:player_dynasty_protection_level > 0
+				exists = dynasty
+			}
+			trigger_if = {
+				limit = {
+					global_var:player_dynasty_protection_level >= 3
+				}
+				any_player = {
+					dynasty ?= prev.dynasty
+				}
+				trigger_if = {
+					limit = {
+						global_var:player_dynasty_protection_level = 3
+					}
+					dynasty = {
+						any_dynasty_member = {
+							count <= global_var:player_dynasty_population_target
+						}
+					}
+				}
+			}
+			trigger_else = {
+				any_player = {
+					house ?= prev.house
+				}
+				trigger_if = {
+					limit = {
+						global_var:player_dynasty_protection_level = 1
+					}
+					house = {
+						any_house_member = {
+							count <= global_var:player_dynasty_population_target
+						}
+					}
+				}
+			}
+		}
+		trigger_if = {
+			limit = {
+				global_var:player_relation_protection_level > 0
+			}
+			any_player = {
+				count = all
+				NOR = {
+					has_any_scripted_relation = ROOT
+					any_scheme = {
+						any_scheme_agent_character = {
+							this = ROOT
+						}
+					}
+					is_scheming_against = { target = ROOT }
+					ROOT = { is_scheming_against = { target = prev } }
+					any_pinned_character = { this = ROOT }
+				}
+				trigger_if = {
+					limit = {
+						global_var:player_relation_protection_level = 2
+					}
+					any_close_family_member = {
+						count = all
+						NOR = {
+							has_any_scripted_relation = prev
+							is_scheming_against = { target = prev }
+							ROOT = { is_scheming_against = { target = prev } }
+						}
+					}
+					any_consort = {
+						count = all
+						NOR = {
+							has_any_scripted_relation = prev
+							is_scheming_against = { target = prev }
+							ROOT = { is_scheming_against = { target = prev } }
+						}
+					}
+				}
+			}
+		}
+		trigger_if = {
+			limit = {
+				global_var:player_realm_protection_level > 0
+			}
+			NOR = {
+				host ?= { is_ai = no }
+				home_court ?= { is_ai = no }
+				imprisoner ?= { is_ai = no }
+			}
+			trigger_if = {
+				limit = {
+					global_var:player_realm_protection_level > 1
+				}
+				trigger_if = {
+					limit = {
+						global_var:player_realm_protection_level = 3
+					}
+					any_player = {
+						count = all
+						top_liege != prev.top_liege
+					}
+				}
+				trigger_else = {
+					any_liege_or_above = {
+						count = all
+						is_ai = yes
+					}
+				}
+			}
+			trigger_else = {
+				NOT = { liege_or_court_owner ?= { is_ai = no } }
+			}
+		}
+	}
+	trigger_if = {
+		limit = {
+			global_var:positive_genetic_protection_level > 0
+		}
+		NOR = {
+			# this is not "genetic"
+			has_trait = pure_blooded
+			trigger_if = {
+				limit = {
+					global_var:positive_genetic_protection_level = 1
+				}
+				OR = {
+					has_trait = beauty_good_3
+					has_trait = intellect_good_3
+					has_trait = physique_good_3
+					has_trait = fecund
+				}
+			}
+			trigger_else_if = {
+				limit = {
+					global_var:positive_genetic_protection_level = 2
+				}
+				num_of_good_genetic_traits > 0
+			}
+			trigger_else = {
+				always = no
+			}
+		}
+	}
+	trigger_if = {
+		limit = {
+			exists = global_var:historical_character_protection
+		}
+		historical_character_trigger = no
+	}
+	trigger_if = {
+		limit = {
+			global_var:inspiration_protection > 0
+		}
+		NOR = {
+			exists = inspiration
+			AND = {
+				global_var:inspiration_protection = 2
+				has_completed_inspiration = yes
+			}
+		}
+	}
+	trigger_if = {
+		limit = {
+			exists = global_var:court_position_protection
+		}
+		has_any_court_position = no
+	}
+	trigger_if = {
+		limit = {
+			global_var:activity_protection > 0
+		}
+		NOT = { exists = involved_activity }
+		trigger_if = {
+			limit = {
+				global_var:activity_protection = 2
+			}
+			NOT = { exists = current_travel_plan }
+		}
+	}
+
+	trigger_if = {
+		limit = {
+			exists = global_var:GH_magic_protection
+		}
+		gh_know_magic_or_spell = no
+	}
+	# dragon related characters is rare, so check least
+	trigger_if = {
+		limit = {
+			exists = global_var:AGOT_dragon_protection
+		}
+		NOR = {
+			has_trait = dragon
+			has_trait = dragonrider
+			has_trait = dragonless_dragonrider
+			has_trait = dragonwidowed
+			has_trait = dragonslayer
+		}
+	}
+	trigger_if = {
+		#Elf Destiny Safe
+		limit = {
+			exists = global_var:elf_destiny_protection
+		}
+		character_is_elf_destiny = no
+	}
+	trigger_if = {
+		# Witchcraft Protection
+		limit = {
+			exists = global_var:witchcraft_protection
+		}
+		character_is_witchcraft = no
+	}
+	trigger_if = {
+		# Pure Blooded Expanded Protection
+		limit = {
+			exists = global_var:pure_blooded_expanded_protection
+		}
+		character_is_pure_blooded_expanded = no
+	}
+	trigger_if = {
+		# Pantheon of the Gods Protection
+		limit = {
+			exists = global_var:pantheon_of_the_gods_protection
+		}
+		character_is_pantheon_of_the_gods = no
+	}
+	trigger_if = {
+		# Highlander Expanded Protection
+		limit = {
+			exists = global_var:highlander_expanded_protection
+		}
+		character_is_highlander_expanded = no
+	}
+	trigger_if = {
+		# Highlander Normal Protection
+		limit = {
+			exists = global_var:highlander_normal_protection
+		}
+		character_is_highlander_normal = no
+	}
+	trigger_if = {
+		# Immortals Revised Mod Protection
+		limit = {
+			exists = global_var:immortals_revised_mod_protection
+		}
+		character_is_immortals_revised = no
+	}
+	trigger_if = {
+		# Immortals Improved Mod Protection
+		limit = {
+			exists = global_var:immortals_improved_mod_protection
+		}
+		character_is_immortals_improved = no
+	}
+	trigger_if = {
+		# Elf Superiority Submod Protection
+		limit = {
+			exists = global_var:elf_superiority_submod_protection
+		}
+		character_is_elf_superiority_submod = no
+	}
+	trigger_if = {
+		# Elf LOTR Submod Protection
+		limit = {
+			exists = global_var:elf_lotr_submod_protection
+		}
+		character_is_elf_lotr_submod = no
+	}
+	trigger_if = {
+		# Elf Atlantis Submod Protection
+		limit = {
+			exists = global_var:elf_atlantis_submod_protection
+		}
+		character_is_elf_atlantis_submod = no
+	}
+	trigger_if = {
+		# Save Immortals Protection
+		limit = {
+			exists = global_var:save_immortals_protection
+		}
+		character_is_save_immortals = no
+	}
+	trigger_if = {
+		# The Road of God Protection
+		limit = {
+			exists = global_var:the_road_of_god_protection
+		}
+		character_is_the_road_of_god = no
+	}
+	trigger_if = {
+		# The Beast Protection
+		limit = {
+			exists = global_var:the_beast_protection
+		}
+		character_is_the_beast = no
+	}
+	trigger_if = {
+		# Age of Dragons Reborn Protection
+		limit = {
+			exists = global_var:age_of_dragons_reborn_protection
+		}
+		character_is_dragonhearted = no
+	}
+	trigger_if = {
+		# AGOT Protection
+		limit = {
+			exists = global_var:agot_protection
+		}
+		character_is_agot = no
+	}
+	trigger_if = {
+		# Apotheosis Protection
+		limit = {
+			exists = global_var:apotheosis_protection
+		}
+		character_is_apotheosis = no
+	}
+	trigger_if = {
+		# Arcane Legacy 3 Protection
+		limit = {
+			exists = global_var:arcane_legacy_3_protection
+		}
+		character_is_arcane_legacy_3 = no
+	}
+	trigger_if = {
+		# Arcane Legacy 2 Protection
+		limit = {
+			exists = global_var:arcane_legacy_2_protection
+		}
+		character_is_arcane_legacy_2 = no
+	}
+	trigger_if = {
+		# More Congenital Traits Protection
+		limit = {
+			exists = global_var:more_congenital_traits_protection
+		}
+		character_is_more_congenital_traits = no
+	}
+	trigger_if = {
+		# Ary New Commander Protection
+		limit = {
+			exists = global_var:ary_new_commander_protection
+		}
+		character_is_ary_commander = no
+	}
+	trigger_if = {
+		# Inheritable Traits Plus Protection
+		limit = {
+			exists = global_var:inheritable_traits_plus_protection
+		}
+		character_is_inheritable_traits_plus = no
+	}
+	trigger_if = {
+		# Lifespan Traits Protection
+		limit = {
+			exists = global_var:lifespan_traits_protection
+		}
+		character_is_lifespan_traits = no
+	}
+	trigger_if = {
+		# Vampirism & Lycanthropy Protection
+		limit = {
+			exists = global_var:vampirism_lycanthropy_protection
+		}
+		character_is_vampirism_lycanthropy = no
+	}
+	trigger_if = {
+		# Supernatural Protection
+		limit = {
+			exists = global_var:supernatural_protection
+		}
+		character_is_supernatural = no
+	}
+	trigger_if = {
+		# Petty Inheritable Protection
+		limit = {
+			exists = global_var:petty_inheritable_protection
+		}
+		character_is_petty_inheritable = no
+	}
+	trigger_if = {
+		# Positive Congenital Protection
+		limit = {
+			exists = global_var:positive_congenital_protection
+		}
+		character_is_positive_congenital = no
+	}
+	trigger_if = {
+		# Negative Congenital Protection
+		limit = {
+			exists = global_var:negative_congenital_protection
+		}
+		character_is_negative_congenital = no
+	}
+	trigger_if = {
+		# Special Congenital Protection
+		limit = {
+			exists = global_var:special_congenital_protection
+		}
+		character_is_special_congenital = no
+	}
+	trigger_if = {
+		# Sappho's Daughter 2 Protection
+		limit = {
+			exists = global_var:sapphos_daughter_2_protection
+		}
+		character_is_sapphos_daughter = no
+	}
+	trigger_if = {
+		# Old Valyria Lite Protection
+		limit = {
+			exists = global_var:old_valyria_lite_protection
+		}
+		character_is_old_valyria_lite = no
+	}
+	trigger_if = {
+		# Education 5 Protection
+		limit = {
+			exists = global_var:education_5_protection
+		}
+		character_is_save_education_5 = no
+	}
+	trigger_if = {
+		# Dense Muscles Protection
+		limit = {
+			exists = global_var:dense_muscles_protection
+		}
+		character_is_dense_muscles = no
+	}
+	trigger_if = {
+		# Become Hero Protection
+		limit = {
+			exists = global_var:become_hero_protection
+		}
+		character_is_become_hero = no
+	}
+	trigger_if = {
+		# Rice Protection
+		limit = {
+			exists = global_var:rice_protection
+		}
+		character_is_rice = no
+	}
+}

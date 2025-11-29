@@ -1,0 +1,122 @@
+﻿on_game_start_after_lobby = {
+	on_actions = {
+		bpc_on_game_start
+	}
+}
+
+yearly_global_pulse = {
+	on_actions = {
+		bpc_yearly_global_pulse
+	}
+}
+
+bpc_on_game_start = {
+	effect = {
+		bpc_init_effect = yes
+	}
+}
+bpc_yearly_global_pulse = {
+	trigger = {
+		bpc_enable_population_control = yes
+	}
+	effect = {
+		every_living_character = {
+			trigger_event = {
+				on_action = bpc_death_check
+				days = { 1 360 }
+			}
+		}
+	}
+}
+bpc_yearly_global_pulse_at_once = {
+	trigger = {
+		bpc_enable_population_control = yes
+	}
+	effect = {
+		every_living_character = {
+			trigger_event = {
+				on_action = bpc_death_check
+			}
+		}
+	}
+}
+
+bpc_death_check = {
+	trigger = {
+		is_alive = yes
+		bpc_death_trigger = yes
+	}
+	effect = {
+		random = {
+			chance = death_chance
+
+			every_parent = {
+				add_character_modifier = {
+					modifier = bpc_reduced_fertility_modifier
+					days = 3650
+				}
+			}
+
+			every_close_family_member = {
+				add_character_modifier = {
+					modifier = bpc_block_stress_change_modifier
+					days = 2
+				}
+			}
+			every_relation = {
+				type = friend
+				add_character_modifier = {
+					modifier = bpc_block_stress_change_modifier
+					days = 2
+				}
+			}
+			every_relation = {
+				type = rival
+				add_character_modifier = {
+					modifier = bpc_block_stress_change_modifier
+					days = 2
+				}
+			}
+			every_relation = {
+				type = lover
+				add_character_modifier = {
+					modifier = bpc_block_stress_change_modifier
+					days = 2
+				}
+			}
+			every_consort = {
+				add_character_modifier = {
+					modifier = bpc_block_stress_change_modifier
+					days = 2
+				}
+			}
+
+			if = {
+				limit = {
+					is_landless_ruler = yes
+				}
+				if = {
+					limit = { is_landless_adventurer = yes }
+					every_held_title = {
+						limit = { is_landless_type_title = yes }
+						prev = {
+							destroy_title = prev
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						primary_title ?= {
+							is_noble_family_title = yes
+						}
+					}
+					destroy_title = primary_title
+				}
+			}
+
+			death = {
+				death_reason = death_disappear_in_history
+			}
+		}
+	}
+}

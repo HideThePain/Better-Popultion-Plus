@@ -1,0 +1,69 @@
+vbox = {
+	name = "decision_view_widget_option_list_big_option_icon"
+	layoutpolicy_horizontal = expanding
+	layoutpolicy_vertical = expanding
+	ignoreinvisible = yes
+
+	margin_top = 10
+	spacing = 10
+
+	text_label_center = {
+		text = "SELECT_ACTION"
+	}
+
+	hbox = {
+		layoutpolicy_horizontal = expanding
+		layoutpolicy_vertical = expanding		
+
+		scrollbox = {
+			layoutpolicy_horizontal = expanding
+			layoutpolicy_vertical = expanding
+
+			blockoverride "scrollbox_content" {
+				vbox = {
+					datamodel = "[DecisionViewWidgetOptionList.GetEntries]"
+					spacing = 6
+
+					item = {
+						button_standard = {
+							size = { 720 240 }
+							margin = { 10 10 }
+							onclick = "[DecisionViewWidgetOptionList.OnSelect(Entry.Self)]"
+							enabled = "[Entry.IsEnabled]"
+							tooltip = "[Entry.GetTooltip]"
+							down = "[Entry.IsSelected]"
+
+							hbox = {
+								layoutpolicy_horizontal = expanding
+								layoutpolicy_vertical = expanding
+								spacing = 10
+								margin_left = 10
+
+								icon = {
+									size = { 160 240 }
+									texture = "[Entry.GetIcon]"
+								}
+
+								vbox = {
+									layoutpolicy_vertical = expanding
+									margin_left = 15
+									margin_bottom = 5
+
+									text_multi = {
+										text = "[Entry.GetName]"
+										max_width = 250
+										autoresize = yes
+										fontsize_min = 15
+										align = left
+									}
+								}
+								expand = {}
+							}
+						}
+					}
+				}
+			}
+			blockoverride "scrollbox_background_fade" {}
+		}
+	}
+}
